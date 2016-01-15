@@ -24,6 +24,7 @@ import com.hcb.jingle.bean.HomeGridVO;
 import com.hcb.jingle.biz.ActivitySwitcher;
 import com.hcb.jingle.frg.CategoryFrg;
 import com.hcb.jingle.frg.CommodityFrg;
+import com.hcb.jingle.frg.login.LoginFrg;
 import com.hcb.jingle.loader.HomeListLoader;
 import com.hcb.jingle.loader.base.AbsLoader.RespReactor;
 import com.hcb.jingle.model.HomeListInBody;
@@ -43,9 +44,9 @@ import in.srain.cube.views.ptr.PtrFrameLayout;
 import in.srain.cube.views.ptr.PtrHandler;
 import in.srain.cube.views.ptr.header.MaterialHeader;
 
-//import com.hcb.jingle.loader.user.HomePageLoader;
-//import com.hcb.jingle.model.HomePageInBody;
-
+/**
+ * Created by yang.zhao on 2016/01/15.
+ */
 public class HomePageFrg extends CachableFrg implements MoreLoader {
 
     private final static Logger LOG = LoggerFactory.getLogger(HomePageFrg.class);
@@ -77,6 +78,25 @@ public class HomePageFrg extends CachableFrg implements MoreLoader {
         initGrid((GridView) v.findViewById(R.id.home_grid));
         initList();
         initPtr();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (null == bannerData) {
+            loadBanner();
+        }
+        if (null == gridData) {
+            loadGrid();
+        }
+    }
+
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        if (!curUser.isLogin()) {
+            ActivitySwitcher.startFragment(getActivity(), LoginFrg.class);
+        }
     }
 
     private void initBanner(AutoBanner banner) {
@@ -165,15 +185,6 @@ public class HomePageFrg extends CachableFrg implements MoreLoader {
                 reloadData();
             }
         });
-    }
-
-    @Override
-    public void onViewCreated(View view, Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        if (listData.size() == 0) {
-            loadBanner();
-            loadGrid();
-        }
     }
 
     private void loadBanner() {

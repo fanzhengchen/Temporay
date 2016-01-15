@@ -11,7 +11,7 @@ import com.hcb.jingle.util.StringUtil;
 import com.hcb.jingle.util.ToastUtil;
 
 /**
- * Created by Administrator on 2015/12/24.
+ * Created by yang.zhao on 2016/01/15.
  */
 public class BaseAuthFrg extends TitleFragment implements EventCenter.EventListener {
 
@@ -29,9 +29,8 @@ public class BaseAuthFrg extends TitleFragment implements EventCenter.EventListe
 
     protected void onLogin(LoginInBody body) {
         dismissDialog();
-
         curUser.setUid(body.getUuid());
-
+        curUser.fetchBasicInfo(null);
         eventCenter.evtLogin();
     }
 

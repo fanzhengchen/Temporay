@@ -8,6 +8,9 @@ import com.hcb.jingle.bean.CommodityVO;
 
 import java.util.List;
 
+/**
+ * Created by yang.zhao on 2016/01/15.
+ */
 public class CommodityAdapter extends PagableAdapter {
 
     private List<CommodityVO> data;

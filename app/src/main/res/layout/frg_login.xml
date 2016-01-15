@@ -2,44 +2,24 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:background="@color/white"
-              android:orientation="vertical">
+              android:background="@color/main_bg"
+              android:orientation="vertical"
+              android:padding="10dp">
 
+    <EditText
+        android:id="@+id/phoneNumber"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="50dp"
+        android:hint="@string/input_phone_num"
+        android:paddingLeft="5dp"
+        android:phoneNumber="true"
+        android:textSize="16sp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="44dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="30dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:paddingLeft="5dp"
-            android:phoneNumber="true"
-            android:text="086"
-            android:textColor="@color/black"
-            android:textSize="@dimen/txt_size_1"/>
-
-        <EditText
-            android:id="@+id/phoneNumber"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="10dp"
-            android:background="@color/white"
-            android:hint="@string/input_phone_num"
-            android:padding="5dp"
-            android:phoneNumber="true"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="44dp"
-        android:layout_margin="10dp"
+        android:layout_marginTop="20dp"
         android:orientation="horizontal">
 
         <EditText
@@ -47,15 +27,16 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@color/white"
             android:hint="@string/please_input_captcha_with_6_digits"
             android:padding="5dp"
-            android:phoneNumber="true"/>
+            android:phoneNumber="true"
+            android:textSize="16sp"/>
 
         <TextView
             android:id="@+id/fetchCaptchaButton"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
             android:background="@drawable/shape_captcha"
             android:gravity="center"
             android:paddingLeft="20dp"
@@ -69,54 +50,23 @@
         android:id="@+id/loginButton"
         android:layout_width="match_parent"
         android:layout_height="44dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/shape_login"
         android:gravity="center"
         android:text="@string/login"
         android:textColor="@color/white"
-        android:textSize="@dimen/txt_size_1"/>
+        android:textSize="18sp"/>
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"/>
-
-    <LinearLayout
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal|bottom"
-        android:layout_marginBottom="40dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="10dp"
-        android:orientation="horizontal"
-        android:padding="5dp">
-
-
-        <CheckBox
-            android:id="@+id/checkbox"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:text="@string/have_read_and_agreed_with"
-            android:textSize="@dimen/txt_size_3"/>
-
-        <TextView
-            android:id="@+id/user_protocol"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="《用户协议》"
-            android:textColor="@color/dark_blue"
-            android:textSize="@dimen/txt_size_3"/>
-
-
-    </LinearLayout>
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/frm_round_black"
+        android:drawableLeft="@mipmap/qq_blue"
+        android:gravity="center_vertical"
+        android:paddingRight="10dp"
+        android:text="@string/login_with_qq"
+        android:textSize="18sp"/>
 
 </LinearLayout>

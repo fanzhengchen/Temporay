@@ -6,7 +6,6 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -22,18 +21,15 @@ import com.hcb.jingle.util.FormatUtil;
 import com.hcb.jingle.util.Md5;
 import com.hcb.jingle.util.ToastUtil;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 /**
- * Created by Administrator on 2015/12/24.
+ * Created by yang.zhao on 2016/01/15.
  */
 public class LoginFrg extends BaseAuthFrg {
-    private final Logger LOG = LoggerFactory.getLogger(LoginFrg.class);
+
     private final long COUNT_DOWN_TOTAL = 60000;
     private final long COUNT_DOWN_INTERVAL = 1000;
     private final CountDownTimer countDownTimer = new CountDownTimer(COUNT_DOWN_TOTAL, COUNT_DOWN_INTERVAL) {
@@ -50,25 +46,13 @@ public class LoginFrg extends BaseAuthFrg {
         }
     };
 
-
-    @Bind(R.id.fetchCaptchaButton)
-    TextView fetchCaptcha;
-    @Bind(R.id.captchaNumber)
-    EditText captchaNumber;
-    @Bind(R.id.phoneNumber)
-    EditText phoneNumber;
-    @Bind(R.id.loginButton)
-    TextView loginButton;
-    @Bind(R.id.user_protocol)
-    TextView userProtocol;
-    @Bind(R.id.checkbox)
-    CheckBox checkBox;
-
-    private LoginOutBody outBody = new LoginOutBody();
+    @Bind(R.id.fetchCaptchaButton) TextView fetchCaptcha;
+    @Bind(R.id.captchaNumber) EditText captchaNumber;
+    @Bind(R.id.phoneNumber) EditText phoneNumber;
 
     @Override
     public int getTitleId() {
-        return R.string.login_with_phone_number;
+        return R.string.login;
     }
 
     @Nullable
@@ -81,11 +65,9 @@ public class LoginFrg extends BaseAuthFrg {
 
     @OnClick(R.id.fetchCaptchaButton)
     public void fetchCaptcha(View view) {
-
         if (!checkPhone(phoneNumber.getText().toString())) {
             return;
         }
-
         new FetchCaptchaLoader().sendCaptcha(phone, new AbsLoader.RespReactor<CaptchaInBody>() {
             @Override
             public void succeed(CaptchaInBody body) {
@@ -102,27 +84,25 @@ public class LoginFrg extends BaseAuthFrg {
 
     @OnClick(R.id.loginButton)
     public void login(View view) {
-        if (!checkBox.isChecked()) {
-            ToastUtil.show("请同意用户协议");
+        if (!checkPhone(phoneNumber.getText().toString())) {
             return;
         }
-        if (checkCaptcha(captchaNumber.getText().toString())) {
+        if (!checkCaptcha(captchaNumber.getText().toString())) {
             return;
         }
-        outBody.setCaptcha(captcha);
-        String rawString = FormatUtil.getDateString() + phone + GlobalConsts.JINGLE_PWD_KEY;
-        String md5 = Md5.encode(rawString);
+        final String rawString = FormatUtil.getDateString() + phone + GlobalConsts.JINGLE_PWD_KEY;
+        final String md5 = Md5.encode(rawString);
+
+        final LoginOutBody outBody = new LoginOutBody();
         outBody.setPassword(md5);
         outBody.setPhone(phone);
-        curUser.setPassword(md5);
-
+        outBody.setCaptcha(captcha);
         new LoginLoader().login(phone, outBody, new AbsLoader.RespReactor<LoginInBody>() {
             @Override
             public void succeed(LoginInBody body) {
                 curUser.setPhone(phone);
-                curUser.setUid(body.getUuid());
-                curUser.fetchBasicInfo(null);
-                act.finishDown();
+                curUser.setPassword(md5);
+                onLogin(body);
             }
 
             @Override
@@ -130,7 +110,6 @@ public class LoginFrg extends BaseAuthFrg {
                 ToastUtil.show(reason);
             }
         });
-
 
     }
 }

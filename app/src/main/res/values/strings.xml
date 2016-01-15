@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">万事叮当</string>
-	
+
     <string name="homepage">团购</string>
     <string name="mall">商城</string>
-	<string name="admin">管家</string>
+    <string name="admin">管家</string>
     <string name="zone">社区</string>
     <string name="personal">个人</string>
 
@@ -16,19 +16,19 @@
     <string name="save">保存</string>
     <string name="confirm">确定</string>
     <string name="delete">删除</string>
-	
+
     <string name="login">登录</string>
-    <string name="login_with_phone_number">手机号登录</string>
+    <string name="login_with_qq">QQ号登录</string>
     <string name="input_phone_num">请输入手机号码</string>
     <string name="phone_number_cant_empty">手机号码不能为空</string>
     <string name="phone_number_invalid">请输入正确的手机号码</string>
     <string name="fetch_captcha">获取验证码</string>
     <string name="send_captcha">发送验证码</string>
     <string name="captcha_sending">正在发送验证码...</string>
-	<string name="please_input_captcha_with_6_digits">请输入6位验证码数字</string>
-	<string name="login_ing">正在登录...</string>
+    <string name="please_input_captcha_with_6_digits">请输入6位验证码数字</string>
+    <string name="login_ing">正在登录...</string>
     <string name="have_read_and_agreed_with">已阅读并同意</string>
-	
+
     <string name="nickname">昵称</string>
     <string name="pick_avatar">选择头像</string>
     <string name="imageGallery">相册</string>
@@ -37,9 +37,9 @@
 
     <string name="version">版本信息</string>
     <string name="logout">退出登录</string>
-	
+
     <string name="share_title">万事叮当--让你遇见更好的自己</string>
     <string name="share_content">万事叮当是一款快速团购APP</string>
 
-	
+
 </resources>

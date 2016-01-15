@@ -4,7 +4,7 @@ import com.hcb.jingle.loader.base.BaseGetLoader;
 import com.hcb.jingle.model.login.CaptchaInBody;
 
 /**
- * Created by Administrator on 2015/12/24.
+ * Created by yang.zhao on 2016/01/15.
  */
 public class FetchCaptchaLoader extends BaseGetLoader<CaptchaInBody> {
 

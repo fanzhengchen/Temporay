@@ -4,6 +4,9 @@ import android.os.Bundle;
 
 import com.hcb.jingle.R;
 
+/**
+ * Created by yang.zhao on 2016/01/15.
+ */
 public class AdminFrg extends CachableFrg {
 
     @Override

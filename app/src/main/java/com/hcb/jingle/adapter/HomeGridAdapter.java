@@ -18,6 +18,9 @@ import java.util.List;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
+/**
+ * Created by yang.zhao on 2016/01/15.
+ */
 public class HomeGridAdapter extends AbsFitAdapter {
 
     private List<HomeGridVO> data;

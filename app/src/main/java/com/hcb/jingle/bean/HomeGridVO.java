@@ -1,5 +1,8 @@
 package com.hcb.jingle.bean;
 
+/**
+ * Created by yang.zhao on 2016/01/15.
+ */
 public class HomeGridVO {
 
     private String imgUrl;//    img_url		图片URL

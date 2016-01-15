@@ -2,6 +2,9 @@ package com.hcb.jingle.bean;
 
 import com.hcb.jingle.model.base.InBody;
 
+/**
+ * Created by yang.zhao on 2016/01/15.
+ */
 public class UserBasicVO extends InBody {
 
     private String phone;       //	电话号码	没有设置时

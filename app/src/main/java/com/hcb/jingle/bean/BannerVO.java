@@ -2,6 +2,9 @@ package com.hcb.jingle.bean;
 
 import com.alibaba.fastjson.annotation.JSONField;
 
+/**
+ * Created by yang.zhao on 2016/01/15.
+ */
 public class BannerVO {
 
     private String imgUrl;//    img_url		图片URL
