@@ -21,6 +21,7 @@ import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.ImageScaleType;
 import com.umeng.analytics.AnalyticsConfig;
 import com.umeng.analytics.MobclickAgent;
+import com.umeng.socialize.PlatformConfig;
 import com.umeng.socialize.common.SocializeConstants;
 
 import java.io.File;
@@ -40,10 +41,7 @@ public class GlobalBeans {
         self.initBizObjects();
         self.initImageLoader();
 
-        AnalyticsConfig.setAppkey(ctx, GlobalConsts.UMENG_APPKEY);
-        MobclickAgent.openActivityDurationTrack(false);
-        SocializeConstants.APPKEY = GlobalConsts.UMENG_APPKEY;
-
+        self.initUmeng();
 //        PushManager.getInstance().initialize(ctx);
     }
 
@@ -70,6 +68,14 @@ public class GlobalBeans {
         httpProvider = new HttpProvider(ctx);
         eventCenter = new EventCenter(uiHandler);
         curUser = new CurrentUser(ctx);
+    }
+
+    private void initUmeng() {
+        AnalyticsConfig.setAppkey(ctx, GlobalConsts.UMENG_APPKEY);
+        MobclickAgent.openActivityDurationTrack(false);
+        SocializeConstants.APPKEY = GlobalConsts.UMENG_APPKEY;
+        SocializeConstants.DEBUG_MODE = GlobalConsts.DEBUG;
+        PlatformConfig.setQQZone(GlobalConsts.QQ_ID, GlobalConsts.QQ_SECRET);
     }
 
     private void initImageLoader() {

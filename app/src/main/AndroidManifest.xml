@@ -1,24 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="com.hcb.jingle"
-          xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest
+    package="com.hcb.jingle"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <permission
         android:name="getui.permission.GetuiService.${PACKAGE_NAME}"
-        android:protectionLevel="normal" />
-		
-	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="getui.permission.GetuiService.${PACKAGE_NAME}" />
-	
+        android:protectionLevel="normal"/>
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="getui.permission.GetuiService.${PACKAGE_NAME}"/>
+
+    <!-- QQ、QQ空间所需权限 -->
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.SET_DEBUG_APP"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.USE_CREDENTIALS"/>
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS"/>
+
     <application
-		android:name=".ThisApp"
+        android:name=".ThisApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
-        <activity android:name="com.hcb.jingle.act.MainActivity"
+        <activity
+            android:name="com.hcb.jingle.act.MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -26,24 +36,50 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-		<activity
+        <activity
             android:name="com.hcb.jingle.act.NaviActivity"
-            android:screenOrientation="portrait" />
-		
+            android:screenOrientation="portrait"/>
+
         <!-- 配置 getui Receiver -->
         <receiver
             android:name="com.hcb.jingle.receiver.GetuiReceiver"
             android:exported="true">
             <intent-filter>
-                <action android:name="com.igexin.sdk.action.${GETUI_APP_ID}" />
+                <action android:name="com.igexin.sdk.action.${GETUI_APP_ID}"/>
             </intent-filter>
         </receiver>
 
         <!-- 配置 UMENG  -->
         <meta-data
             android:name="UMENG_CHANNEL"
-            android:value="${UMENG_CHANNEL_VALUE}"></meta-data>	
-			
+            android:value="${UMENG_CHANNEL_VALUE}"></meta-data>
+
+        <!-- Wechat need-->
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <!-- QQ need-->
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+
+                <data android:scheme="tencent1103630364"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+
     </application>
 
 </manifest>

@@ -11,7 +11,8 @@ public class GlobalConsts {
     public static final String UPLOAD_IMAGE = "http://121.199.47.167/honey/service_image/index.php";
 
     //------------------友盟统计分享-------------------
-    private static final String UMENG_KEY_DEBUG = "waitToBeAdd";
+    //// TODO: 2016/1/15 umeng KEY, waitToBeAdd
+    private static final String UMENG_KEY_DEBUG = "56303ea3e0f55ab905001ed7";
     private static final String UMENG_KEY_RELEASE = "waitToBeAdd";
     public static final String UMENG_APPKEY = DEBUG ? UMENG_KEY_DEBUG : UMENG_KEY_RELEASE;
 
@@ -22,6 +23,14 @@ public class GlobalConsts {
     private static final String WX_SECRET_RELEASE = "waitToBeAdd";
     public static final String WX_ID = DEBUG ? WX_ID_DEBUG : WX_ID_RELEASE;
     public static final String WX_SECRET = DEBUG ? WX_SECRET_DEBUG : WX_SECRET_RELEASE;
+
+    //------------------QQ授权-------------------
+    private static final String QQ_ID_DEBUG = "1103630364";
+    private static final String QQ_SECRET_DEBUG = "GScoONFZqfYczxP6";
+    private static final String QQ_ID_RELEASE = "waitToBeAdd";
+    private static final String QQ_SECRET_RELEASE = "waitToBeAdd";
+    public static final String QQ_ID = DEBUG ? QQ_ID_DEBUG : QQ_ID_RELEASE;
+    public static final String QQ_SECRET = DEBUG ? QQ_SECRET_DEBUG : QQ_SECRET_RELEASE;
 
     //------------------服务协议--------------------
     public final static String SERVICE_AGREEMENTS_URL = "waitToBeAdd";

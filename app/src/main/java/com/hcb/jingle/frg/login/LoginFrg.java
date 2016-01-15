@@ -1,5 +1,6 @@
 package com.hcb.jingle.frg.login;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.annotation.Nullable;
@@ -18,8 +19,18 @@ import com.hcb.jingle.model.login.CaptchaInBody;
 import com.hcb.jingle.model.login.LoginInBody;
 import com.hcb.jingle.model.login.LoginOutBody;
 import com.hcb.jingle.util.FormatUtil;
+import com.hcb.jingle.util.LoggerUtil;
 import com.hcb.jingle.util.Md5;
 import com.hcb.jingle.util.ToastUtil;
+import com.umeng.socialize.UMAuthListener;
+import com.umeng.socialize.UMShareAPI;
+import com.umeng.socialize.bean.SHARE_MEDIA;
+import com.umeng.socialize.handler.UMQQSsoHandler;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.util.Map;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -29,6 +40,8 @@ import butterknife.OnClick;
  * Created by yang.zhao on 2016/01/15.
  */
 public class LoginFrg extends BaseAuthFrg {
+
+    private final static Logger LOG = LoggerFactory.getLogger(LoginFrg.class);
 
     private final long COUNT_DOWN_TOTAL = 60000;
     private final long COUNT_DOWN_INTERVAL = 1000;
@@ -50,6 +63,8 @@ public class LoginFrg extends BaseAuthFrg {
     @Bind(R.id.captchaNumber) EditText captchaNumber;
     @Bind(R.id.phoneNumber) EditText phoneNumber;
 
+    private UMShareAPI umAPI;
+
     @Override
     public int getTitleId() {
         return R.string.login;
@@ -60,6 +75,7 @@ public class LoginFrg extends BaseAuthFrg {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.frg_login, container, false);
         ButterKnife.bind(this, rootView);
+        umAPI = UMShareAPI.get(act);
         return rootView;
     }
 
@@ -111,5 +127,54 @@ public class LoginFrg extends BaseAuthFrg {
             }
         });
 
+    }
+
+    @OnClick(R.id.btn_qq_login)
+    public void loginQQ(View view) {
+        if (umAPI.isInstall(act, SHARE_MEDIA.QQ)) {
+            umAPI.doOauthVerify(act, SHARE_MEDIA.QQ, umAuthListener);
+        } else {
+            ToastUtil.show(getString(R.string.qq_not_installed));
+        }
+    }
+
+    private final UMAuthListener umAuthListener = new UMAuthListener() {
+        @Override
+        public void onComplete(SHARE_MEDIA platform, int action, Map<String, String> data) {
+            if (ACTION_AUTHORIZE == action) {
+                LoggerUtil.d(LOG, "Authorize succeed");
+                //auth_time=,ret=0,sendinstall=,page_type=,appid=,pf=desktop_m_qq-10000144-android-2002-
+                // uid=6B0521BC0A466CA026196443964B0599
+                // pay_token=8C77C25C621F13C3828820E105B908AE
+                // expires_in=7776000
+                // openid=6B0521BC0A466CA026196443964B0599
+                // pfkey=fe28a3924cb69f03daf15276d35b6d8f
+                // access_token=9515F0336708C3D6C6E889A6BAB8DA6C
+                umAPI.getPlatformInfo(act, platform, umAuthListener);
+            } else if (ACTION_GET_PROFILE == action) {
+                ToastUtil.show(getString(R.string.qq_authed_loging));
+                LoggerUtil.d(LOG, "UserInfo--{}", data.toString());
+                //is_yellow_year_vip=0, vip=0, level=0, yellow_vip_level=0, is_yellow_vip=0, msg=,// province=浙江, city=杭州
+                // gender=男,
+                // openid=6B0521BC0A466CA026196443964B0599,
+                // screen_name=冰山飞羊,
+                // profile_image_url=http://q.qlogo.cn/qqapp/1103630364/6B0521BC0A466CA026196443964B0599/100,
+            }
+        }
+
+        @Override
+        public void onError(SHARE_MEDIA platform, int action, Throwable t) {
+            ToastUtil.show("Authorize fail");
+        }
+
+        @Override
+        public void onCancel(SHARE_MEDIA platform, int action) {
+            ToastUtil.show("Authorize cancel");
+        }
+    };
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        umAPI.onActivityResult(requestCode, resultCode, data);
     }
 }
