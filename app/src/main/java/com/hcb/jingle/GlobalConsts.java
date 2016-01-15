@@ -38,4 +38,7 @@ public class GlobalConsts {
     public final static String EX_USERID = "user_uuid";
     public final static String EX_USERNICK = "user_nick";
 
+    public final static String EX_CMTY_ID = "commodity";
+    public final static String EX_CTGY_TAG = "category";
+
 }
