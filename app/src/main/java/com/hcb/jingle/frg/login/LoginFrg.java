@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.hcb.jingle.GlobalConsts;
 import com.hcb.jingle.R;
+import com.hcb.jingle.biz.ShareHelper;
 import com.hcb.jingle.loader.login.FetchCaptchaLoader;
 import com.hcb.jingle.loader.login.LoginLoader;
 import com.hcb.jingle.loader.base.AbsLoader;
@@ -22,10 +23,14 @@ import com.hcb.jingle.util.FormatUtil;
 import com.hcb.jingle.util.LoggerUtil;
 import com.hcb.jingle.util.Md5;
 import com.hcb.jingle.util.ToastUtil;
+import com.umeng.socialize.ShareAction;
+import com.umeng.socialize.ShareContent;
 import com.umeng.socialize.UMAuthListener;
 import com.umeng.socialize.UMShareAPI;
+import com.umeng.socialize.UMShareListener;
 import com.umeng.socialize.bean.SHARE_MEDIA;
 import com.umeng.socialize.handler.UMQQSsoHandler;
+import com.umeng.socialize.media.UMImage;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -146,9 +151,9 @@ public class LoginFrg extends BaseAuthFrg {
                 //auth_time=,ret=0,sendinstall=,page_type=,appid=,pf=desktop_m_qq-10000144-android-2002-
                 // uid=6B0521BC0A466CA026196443964B0599
                 // pay_token=8C77C25C621F13C3828820E105B908AE
+                // pfkey=fe28a3924cb69f03daf15276d35b6d8f
                 // expires_in=7776000
                 // openid=6B0521BC0A466CA026196443964B0599
-                // pfkey=fe28a3924cb69f03daf15276d35b6d8f
                 // access_token=9515F0336708C3D6C6E889A6BAB8DA6C
                 umAPI.getPlatformInfo(act, platform, umAuthListener);
             } else if (ACTION_GET_PROFILE == action) {
@@ -164,12 +169,11 @@ public class LoginFrg extends BaseAuthFrg {
 
         @Override
         public void onError(SHARE_MEDIA platform, int action, Throwable t) {
-            ToastUtil.show("Authorize fail");
+            ToastUtil.show(getString(R.string.qq_auth_failed));
         }
 
         @Override
         public void onCancel(SHARE_MEDIA platform, int action) {
-            ToastUtil.show("Authorize cancel");
         }
     };
 
@@ -177,4 +181,12 @@ public class LoginFrg extends BaseAuthFrg {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         umAPI.onActivityResult(requestCode, resultCode, data);
     }
+
+    /////////////////////////////////////
+    /// test share
+    @OnClick(R.id.btn_share)
+    public void share(View view) {
+        ShareHelper.shareApp(act);
+    }
+
 }

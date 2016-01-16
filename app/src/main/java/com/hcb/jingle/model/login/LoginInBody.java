@@ -6,20 +6,7 @@ import com.hcb.jingle.model.base.InBody;
 public class LoginInBody extends InBody {
 
     private String uuid;
-    private int is_register;
-
-
-    public boolean isRegister() {
-        return is_register == 1;
-    }
-
-    public int getIs_register() {
-        return is_register;
-    }
-
-    public void setIs_register(int is_register) {
-        this.is_register = is_register;
-    }
+    private int isRegist;
 
     @JSONField(name = "user_uuid")
     public String getUuid() {
@@ -31,5 +18,13 @@ public class LoginInBody extends InBody {
         this.uuid = uuid;
     }
 
+    public boolean isRegist() {
+        return 1 == isRegist;
+    }
+
+    @JSONField(name = "is_register")
+    public void setIsRegist(int isRegist) {
+        this.isRegist = isRegist;
+    }
 
 }

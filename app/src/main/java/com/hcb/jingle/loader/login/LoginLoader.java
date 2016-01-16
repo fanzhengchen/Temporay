@@ -9,9 +9,9 @@ import com.hcb.jingle.model.login.LoginOutBody;
  */
 public class LoginLoader extends BasePostLoader<LoginOutBody, LoginInBody> {
 
+    private final static String PATH = "user_login/login/%s";
+
     public void login(String phone, LoginOutBody body, RespReactor<LoginInBody> respReactor) {
-        String path = "/user_login/login/%s";
-        String url = genUrl(path, phone);
-        load(url, body, respReactor);
+        load(genUrl(PATH, phone), body, respReactor);
     }
 }

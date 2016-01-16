@@ -8,9 +8,9 @@ import com.hcb.jingle.model.login.CaptchaInBody;
  */
 public class FetchCaptchaLoader extends BaseGetLoader<CaptchaInBody> {
 
+    private final static String PATH = "user_login/sms_captcha/%s";
+
     public void sendCaptcha(String phoneNumber, RespReactor<CaptchaInBody> respReactor) {
-        String path = "/user_login/sms_captcha/%s";
-        String url = genUrl(path, phoneNumber);
-        load(url, respReactor);
+        load(genUrl(PATH, phoneNumber), respReactor);
     }
 }

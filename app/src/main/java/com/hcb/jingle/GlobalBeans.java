@@ -76,6 +76,8 @@ public class GlobalBeans {
         SocializeConstants.APPKEY = GlobalConsts.UMENG_APPKEY;
         SocializeConstants.DEBUG_MODE = GlobalConsts.DEBUG;
         PlatformConfig.setQQZone(GlobalConsts.QQ_ID, GlobalConsts.QQ_SECRET);
+        PlatformConfig.setWeixin(GlobalConsts.WX_ID, GlobalConsts.WX_SECRET);
+        PlatformConfig.setSinaWeibo(GlobalConsts.WB_ID, GlobalConsts.WB_SECRET);
     }
 
     private void initImageLoader() {

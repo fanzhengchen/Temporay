@@ -5,7 +5,7 @@ android {
     buildToolsVersion "23.0.1"
 
     defaultConfig {
-        applicationId "com.hcb.jingle"
+        applicationId "com.dingdan.jingle"
         minSdkVersion 15
         targetSdkVersion 23
         versionCode 100
@@ -17,6 +17,10 @@ android {
                 GETUI_APP_SECRET: "waitToBeAdded",
                 PACKAGE_NAME    : applicationId
         ]
+    }
+
+    sourceSets.main {
+        jniLibs.srcDirs = ['libs']
     }
 
     packagingOptions {
@@ -47,6 +51,13 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    sourceSets {
+        main {
+            jni.srcDirs = []
+            jniLibs.srcDirs = ['../umshare/libs']
+        }
+    }
 }
 
 dependencies {
@@ -62,9 +73,8 @@ dependencies {
     compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
     compile 'com.igexin:sdk:2.6.4.0'
     compile 'com.igexin:getuiext:2.0.3'
-
     compile 'in.srain.cube:ultra-ptr:1.0.11'
     //    compile 'com.makeramen:roundedimageview:2.2.1'
     //    compile 'de.hdodenhof:circleimageview:2.0.0'
-
+    compile project(':umshare')
 }

@@ -1,5 +1,5 @@
 
-package com.hcb.jingle.wxapi;
+package com.dingdan.jingle.wxapi;
 
 import com.umeng.socialize.weixin.view.WXCallbackActivity;
 
