@@ -47,6 +47,11 @@
             android:exported="false"
             android:windowSoftInputMode="adjustResize">
         </activity>
+        <!-- red ? don't worry about it -->
+        <service
+            android:name="com.sina.weibo.sdk.net.DownloadService"
+            android:exported="false">
+        </service>
 
     </application>
 

@@ -18,7 +18,7 @@ public class GlobalConsts {
 
     //------------------微信分享-------------------
     private static final String WX_ID_DEBUG = "wxe6c31febbd05d58d";
-    private static final String WX_SECRET_DEBUG = "efbbec4b7b7440e339f1192d0733082b";
+    private static final String WX_SECRET_DEBUG = "1ae2cd63192bd304e10869eeeed1ce8f";
     private static final String WX_ID_RELEASE = "waitToBeAdd";
     private static final String WX_SECRET_RELEASE = "waitToBeAdd";
     public static final String WX_ID = DEBUG ? WX_ID_DEBUG : WX_ID_RELEASE;
@@ -29,8 +29,8 @@ public class GlobalConsts {
     public static final String QQ_SECRET = "oj8BdgVB4jfdVrmg";
 
     //------------------微博授权-------------------
-    public static final String WB_ID = "292075378";
-    public static final String WB_SECRET = "9c8081785477032489293fef4d3a4fdf";
+    public static final String WB_ID = "907338238";
+    public static final String WB_SECRET = "7956ca472062f0e78bff23d2e789ea0d";
 
     //------------------服务协议--------------------
     public final static String SERVICE_AGREEMENTS_URL = "waitToBeAdd";
