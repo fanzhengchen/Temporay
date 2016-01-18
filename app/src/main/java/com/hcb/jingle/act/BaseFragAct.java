@@ -21,7 +21,7 @@ public class BaseFragAct extends FragmentActivity {
     private void changeBgIfNeed() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             getWindow().getDecorView().setBackgroundColor(
-                    getResources().getColor(R.color.global_bg));
+                    getResources().getColor(R.color.colorAccent));
         }
     }
 

@@ -89,7 +89,7 @@ public class MainActivity extends BaseFragAct implements TabHost.OnTabChangeList
             }
             mTabHost.addTab(mTabHost.newTabSpec(td.tag).setIndicator(vTab), td.frgClass, null);
         }
-        mTabHost.setBackgroundResource(R.color.light_black);
+        mTabHost.setBackgroundResource(R.color.main_bg);
         mTabHost.getTabWidget().setDividerDrawable(null);
         mTabHost.setOnTabChangedListener(this);
     }
