@@ -8,18 +8,7 @@ public class LoginOutBody extends OutBody {
     // 密钥为不变的6位字符串（vcar11） 示例：md5(2015-07-13 15:44:0013705185091vcar11)
     private String password;
 
-    private String phone;
     private String captcha;//	验证码	是	字符串	6位纯数字
-
-    private String openid;// QQ授权
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
 
     public String getPassword() {
         return password;
@@ -37,11 +26,17 @@ public class LoginOutBody extends OutBody {
         this.captcha = captcha;
     }
 
-    public String getOpenid() {
-        return openid;
+    @Deprecated
+    private String phone;
+
+    @Deprecated
+    public String getPhone() {
+        return phone;
     }
 
-    public void setOpenid(String openid) {
-        this.openid = openid;
+    @Deprecated
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
+
 }

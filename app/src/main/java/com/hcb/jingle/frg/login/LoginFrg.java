@@ -12,31 +12,21 @@ import android.widget.TextView;
 
 import com.hcb.jingle.GlobalConsts;
 import com.hcb.jingle.R;
-import com.hcb.jingle.biz.ShareHelper;
-import com.hcb.jingle.biz.WxPay;
+import com.hcb.jingle.loader.base.AbsLoader;
 import com.hcb.jingle.loader.login.FetchCaptchaLoader;
 import com.hcb.jingle.loader.login.LoginLoader;
-import com.hcb.jingle.loader.base.AbsLoader;
 import com.hcb.jingle.loader.user.ProfileUploader;
-import com.hcb.jingle.loader.user.WxOrderFetcher;
 import com.hcb.jingle.model.ProfileOutBody;
 import com.hcb.jingle.model.base.InBody;
 import com.hcb.jingle.model.login.CaptchaInBody;
 import com.hcb.jingle.model.login.LoginInBody;
 import com.hcb.jingle.model.login.LoginOutBody;
-import com.hcb.jingle.model.pay.WxOrderInBody;
 import com.hcb.jingle.util.FormatUtil;
-import com.hcb.jingle.util.LoggerUtil;
 import com.hcb.jingle.util.Md5;
 import com.hcb.jingle.util.ToastUtil;
-import com.umeng.socialize.ShareAction;
-import com.umeng.socialize.ShareContent;
 import com.umeng.socialize.UMAuthListener;
 import com.umeng.socialize.UMShareAPI;
-import com.umeng.socialize.UMShareListener;
 import com.umeng.socialize.bean.SHARE_MEDIA;
-import com.umeng.socialize.handler.UMQQSsoHandler;
-import com.umeng.socialize.media.UMImage;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -122,7 +112,6 @@ public class LoginFrg extends BaseAuthFrg {
 
         final LoginOutBody outBody = new LoginOutBody();
         outBody.setPassword(md5);
-        outBody.setPhone(phone);
         outBody.setCaptcha(captcha);
         showProgressDialog(R.string.login, R.string.login_ing);
         new LoginLoader().login(phone, outBody, new AbsLoader.RespReactor<LoginInBody>() {
@@ -182,7 +171,6 @@ public class LoginFrg extends BaseAuthFrg {
 
         final LoginOutBody outBody = new LoginOutBody();
         outBody.setPassword(md5);
-        outBody.setOpenid(openId);
         showProgressDialog(R.string.login_with_qq, R.string.qq_authed_loging);
         new LoginLoader().loginQQ(openId, outBody, new AbsLoader.RespReactor<LoginInBody>() {
             @Override
@@ -222,30 +210,6 @@ public class LoginFrg extends BaseAuthFrg {
                         eventCenter.evtLogin();
                     }
                 });
-    }
-
-    /////////////////////////////////////
-    /// test share
-    @OnClick(R.id.btn_share)
-    public void share(View view) {
-        ShareHelper.shareApp(act);
-    }
-
-    /////////////////////////////////////
-    /// test weixin pay
-    @OnClick(R.id.btn_wxpay)
-    public void wxPay(View view) {
-        new WxOrderFetcher().fetch(1, new AbsLoader.RespReactor<WxOrderInBody>() {
-            @Override
-            public void succeed(WxOrderInBody body) {
-                WxPay.callPay(act, body.getWxOrder());
-            }
-
-            @Override
-            public void failed(String code, String reason) {
-
-            }
-        });
     }
 
 }

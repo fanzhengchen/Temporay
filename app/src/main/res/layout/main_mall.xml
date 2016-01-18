@@ -12,4 +12,41 @@
         android:text="即将到来"
         android:textColor="@color/main_green"
         android:textSize="24sp"/>
+
+    <TextView
+        android:id="@+id/btn_share"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="90dp"
+        android:background="@drawable/frm_round_black"
+        android:gravity="center"
+        android:text="@string/share"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:id="@+id/btn_wxpay"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="30dp"
+        android:background="@drawable/frm_round_black"
+        android:gravity="center"
+        android:text="@string/wchat_pay"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:id="@+id/btn_alipay"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/frm_round_black"
+        android:gravity="center"
+        android:text="@string/ali_pay"
+        android:textSize="18sp"/>
 </RelativeLayout>
