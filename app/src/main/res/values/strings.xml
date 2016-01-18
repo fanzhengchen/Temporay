@@ -42,6 +42,9 @@
     <string name="version">版本信息</string>
     <string name="logout">退出登录</string>
 
+    <string name="wchat_pay">微信支付</string>
+    <string name="ali_pay">支付宝支付</string>
+
     <string name="share">分享</string>
     <string name="share_title">万事叮当--让你遇见更好的自己</string>
     <string name="share_content">万事叮当是一款快速团购APP</string>

@@ -13,15 +13,18 @@ import android.widget.TextView;
 import com.hcb.jingle.GlobalConsts;
 import com.hcb.jingle.R;
 import com.hcb.jingle.biz.ShareHelper;
+import com.hcb.jingle.biz.WxPay;
 import com.hcb.jingle.loader.login.FetchCaptchaLoader;
 import com.hcb.jingle.loader.login.LoginLoader;
 import com.hcb.jingle.loader.base.AbsLoader;
 import com.hcb.jingle.loader.user.ProfileUploader;
+import com.hcb.jingle.loader.user.WxOrderFetcher;
 import com.hcb.jingle.model.ProfileOutBody;
 import com.hcb.jingle.model.base.InBody;
 import com.hcb.jingle.model.login.CaptchaInBody;
 import com.hcb.jingle.model.login.LoginInBody;
 import com.hcb.jingle.model.login.LoginOutBody;
+import com.hcb.jingle.model.pay.WxOrderInBody;
 import com.hcb.jingle.util.FormatUtil;
 import com.hcb.jingle.util.LoggerUtil;
 import com.hcb.jingle.util.Md5;
@@ -196,6 +199,7 @@ public class LoginFrg extends BaseAuthFrg {
 
             @Override
             public void failed(String code, String reason) {
+                dismissDialog();
                 ToastUtil.show(reason);
             }
         });
@@ -225,6 +229,23 @@ public class LoginFrg extends BaseAuthFrg {
     @OnClick(R.id.btn_share)
     public void share(View view) {
         ShareHelper.shareApp(act);
+    }
+
+    /////////////////////////////////////
+    /// test weixin pay
+    @OnClick(R.id.btn_wxpay)
+    public void wxPay(View view) {
+        new WxOrderFetcher().fetch(1, new AbsLoader.RespReactor<WxOrderInBody>() {
+            @Override
+            public void succeed(WxOrderInBody body) {
+                WxPay.callPay(act, body.getWxOrder());
+            }
+
+            @Override
+            public void failed(String code, String reason) {
+
+            }
+        });
     }
 
 }
