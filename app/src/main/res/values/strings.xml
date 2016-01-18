@@ -22,6 +22,7 @@
     <string name="qq_not_installed">请先安装QQ客户端</string>
     <string name="qq_auth_failed">QQ授权失败</string>
     <string name="qq_authed_loging">QQ授权成功,正在登录...</string>
+    <string name="qq_thumb_nick">获取QQ头像昵称...</string>
     <string name="input_phone_num">请输入手机号码</string>
     <string name="phone_number_cant_empty">手机号码不能为空</string>
     <string name="phone_number_invalid">请输入正确的手机号码</string>

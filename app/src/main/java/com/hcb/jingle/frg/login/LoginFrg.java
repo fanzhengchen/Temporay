@@ -16,6 +16,9 @@ import com.hcb.jingle.biz.ShareHelper;
 import com.hcb.jingle.loader.login.FetchCaptchaLoader;
 import com.hcb.jingle.loader.login.LoginLoader;
 import com.hcb.jingle.loader.base.AbsLoader;
+import com.hcb.jingle.loader.user.ProfileUploader;
+import com.hcb.jingle.model.ProfileOutBody;
+import com.hcb.jingle.model.base.InBody;
 import com.hcb.jingle.model.login.CaptchaInBody;
 import com.hcb.jingle.model.login.LoginInBody;
 import com.hcb.jingle.model.login.LoginOutBody;
@@ -118,6 +121,7 @@ public class LoginFrg extends BaseAuthFrg {
         outBody.setPassword(md5);
         outBody.setPhone(phone);
         outBody.setCaptcha(captcha);
+        showProgressDialog(R.string.login, R.string.login_ing);
         new LoginLoader().login(phone, outBody, new AbsLoader.RespReactor<LoginInBody>() {
             @Override
             public void succeed(LoginInBody body) {
@@ -128,6 +132,7 @@ public class LoginFrg extends BaseAuthFrg {
 
             @Override
             public void failed(String code, String reason) {
+                dismissDialog();
                 ToastUtil.show(reason);
             }
         });
@@ -135,7 +140,7 @@ public class LoginFrg extends BaseAuthFrg {
     }
 
     @OnClick(R.id.btn_qq_login)
-    public void loginQQ(View view) {
+    public void qqClicked(View view) {
         if (umAPI.isInstall(act, SHARE_MEDIA.QQ)) {
             umAPI.doOauthVerify(act, SHARE_MEDIA.QQ, umAuthListener);
         } else {
@@ -147,23 +152,9 @@ public class LoginFrg extends BaseAuthFrg {
         @Override
         public void onComplete(SHARE_MEDIA platform, int action, Map<String, String> data) {
             if (ACTION_AUTHORIZE == action) {
-                LoggerUtil.d(LOG, "Authorize succeed");
-                //auth_time=,ret=0,sendinstall=,page_type=,appid=,pf=desktop_m_qq-10000144-android-2002-
-                // uid=6B0521BC0A466CA026196443964B0599
-                // pay_token=8C77C25C621F13C3828820E105B908AE
-                // pfkey=fe28a3924cb69f03daf15276d35b6d8f
-                // expires_in=7776000
-                // openid=6B0521BC0A466CA026196443964B0599
-                // access_token=9515F0336708C3D6C6E889A6BAB8DA6C
-                umAPI.getPlatformInfo(act, platform, umAuthListener);
+                loginQQ(data.get("openid"));
             } else if (ACTION_GET_PROFILE == action) {
-                ToastUtil.show(getString(R.string.qq_authed_loging));
-                LoggerUtil.d(LOG, "UserInfo--{}", data.toString());
-                //is_yellow_year_vip=0, vip=0, level=0, yellow_vip_level=0, is_yellow_vip=0, msg=,// province=浙江, city=杭州
-                // gender=男,
-                // openid=6B0521BC0A466CA026196443964B0599,
-                // screen_name=冰山飞羊,
-                // profile_image_url=http://q.qlogo.cn/qqapp/1103630364/6B0521BC0A466CA026196443964B0599/100,
+                registThumbNick(data.get("screen_name"), data.get("profile_image_url"));
             }
         }
 
@@ -180,6 +171,53 @@ public class LoginFrg extends BaseAuthFrg {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         umAPI.onActivityResult(requestCode, resultCode, data);
+    }
+
+    private void loginQQ(final String openId) {
+        final String rawString = FormatUtil.getDateString() + openId + GlobalConsts.JINGLE_PWD_KEY;
+        final String md5 = Md5.encode(rawString);
+
+        final LoginOutBody outBody = new LoginOutBody();
+        outBody.setPassword(md5);
+        outBody.setOpenid(openId);
+        showProgressDialog(R.string.login_with_qq, R.string.qq_authed_loging);
+        new LoginLoader().loginQQ(openId, outBody, new AbsLoader.RespReactor<LoginInBody>() {
+            @Override
+            public void succeed(LoginInBody body) {
+                curUser.setPassword(md5);
+                if (body.isRegist()) {
+                    curUser.setUid(body.getUuid());
+                    showProgressDialog(R.string.login_with_qq, R.string.qq_thumb_nick);
+                    umAPI.getPlatformInfo(act, SHARE_MEDIA.QQ, umAuthListener);
+                } else {
+                    onLogin(body);
+                }
+            }
+
+            @Override
+            public void failed(String code, String reason) {
+                ToastUtil.show(reason);
+            }
+        });
+    }
+
+    private void registThumbNick(String thumb, String nick) {
+        new ProfileUploader().upload(new ProfileOutBody().setAvatar(thumb).setNickname(nick),
+                new AbsLoader.RespReactor() {
+                    @Override
+                    public void succeed(InBody body) {
+                        dismissDialog();
+                        curUser.fetchBasicInfo(null);
+                        eventCenter.evtLogin();
+                    }
+
+                    @Override
+                    public void failed(String code, String reason) {
+                        dismissDialog();
+                        curUser.fetchBasicInfo(null);
+                        eventCenter.evtLogin();
+                    }
+                });
     }
 
     /////////////////////////////////////

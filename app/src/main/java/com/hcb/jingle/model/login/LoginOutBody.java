@@ -7,9 +7,11 @@ public class LoginOutBody extends OutBody {
     // 生成规则：md5(当前时间+用户手机+密钥)。
     // 密钥为不变的6位字符串（vcar11） 示例：md5(2015-07-13 15:44:0013705185091vcar11)
     private String password;
+
     private String phone;
     private String captcha;//	验证码	是	字符串	6位纯数字
 
+    private String openid;// QQ授权
 
     public String getPhone() {
         return phone;
@@ -33,5 +35,13 @@ public class LoginOutBody extends OutBody {
 
     public void setCaptcha(String captcha) {
         this.captcha = captcha;
+    }
+
+    public String getOpenid() {
+        return openid;
+    }
+
+    public void setOpenid(String openid) {
+        this.openid = openid;
     }
 }
