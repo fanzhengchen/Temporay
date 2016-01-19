@@ -9,7 +9,10 @@ import android.widget.ListView;
 
 import com.hcb.jingle.R;
 import com.hcb.jingle.adapter.MyOrdersAdapter;
+import com.hcb.jingle.bean.MyOrder;
 import com.hcb.jingle.frg.TitleFragment;
+
+import java.util.ArrayList;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -23,6 +26,7 @@ import in.srain.cube.views.ptr.PtrHandler;
 public class MyOrdersFrg extends TitleFragment {
 
     private MyOrdersAdapter adapter = null;
+    private ArrayList<MyOrder> orders;
 
     @Bind(R.id.list_view)
     ListView listView;
@@ -60,6 +64,11 @@ public class MyOrdersFrg extends TitleFragment {
 
     private void loadData() {
         adapter = new MyOrdersAdapter(act);
+        orders = new ArrayList<>();
+        for (int i = 0; i < 100; ++i) {
+            orders.add(new MyOrder());
+        }
+        adapter.appendData(orders);
         listView.setAdapter(adapter);
     }
 

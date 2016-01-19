@@ -26,6 +26,7 @@ public class RCTextView extends TextView {
     private int cornerWidth;
     private int width, height;
     private Logger log = LoggerFactory.getLogger(RCTextView.class);
+    private Canvas canvas;
 
     public RCTextView(Context context) {
         super(context);
@@ -69,25 +70,40 @@ public class RCTextView extends TextView {
     @Override
     protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
         super.onLayout(changed, left, top, right, bottom);
-        log.debug("FUCK {} {} {} {}", left, top, right, bottom);
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
+        drawSolid(canvas, backgroundColor);
+        drawStroke(canvas, strokeColor);
+        super.onDraw(canvas);
+        this.canvas = canvas;
+    }
+
+    private RectF getRectF() {
         int pad = strokeWidth >> 1;
         int remain = pad & 1;
-        RectF rectf = new RectF(pad, pad, width - pad - remain, height - pad - remain);
+        return new RectF(pad, pad, width - pad - remain, height - pad - remain);
+    }
+
+    private void drawSolid(Canvas canvas, int backgroundColor) {
         Paint solidPaint = new Paint();
         solidPaint.setAntiAlias(true);
         solidPaint.setColor(backgroundColor);
-        canvas.drawRoundRect(rectf, cornerWidth, cornerWidth, solidPaint);
-        super.onDraw(canvas);
+        canvas.drawRoundRect(getRectF(), cornerWidth, cornerWidth, solidPaint);
+    }
+
+    private void drawStroke(Canvas canvas, int strokeColor) {
         Paint strokePaint = new Paint();
         strokePaint.setAntiAlias(true);
         strokePaint.setColor(strokeColor);
         strokePaint.setStrokeWidth(strokeWidth);
         strokePaint.setStyle(Paint.Style.STROKE);
-        canvas.drawRoundRect(rectf, cornerWidth, cornerWidth, strokePaint);
+        log.debug("RCTEXTVIEW {}", canvas);
+        canvas.drawRoundRect(getRectF(), cornerWidth, cornerWidth, strokePaint);
     }
 
+    public void setStrokeColor(int color) {
+        this.strokeColor = color;
+    }
 }
