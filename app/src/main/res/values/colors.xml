@@ -15,11 +15,21 @@
     <color name="main_bg">@color/white</color>
     <color name="main_yellow">#FFC033</color>
     <color name="main_orange">#FF9800</color>
-    <color name="main_blue">#30B0FA</color>
-    <color name="main_red">#E51C23</color>
-    <color name="main_pink">#FD4080</color>
+    <color name="main_blue">#29B6F6</color>
+    <color name="main_red">#FF0000</color>
+    <color name="main_pink">#FF6096</color>
     <color name="main_green">#8CC249</color>
     <color name="main_gray">#999999</color>
+    <color name="capricious_buy">#919E80</color>
+    <color name="annotation">#999999</color>
+    <color name="main_text">#333333</color>
+    <color name="secondary_text">@color/annotation</color>
+    <color name="main_title">#666666</color>
+    <color name="list_divider_color">#E6E6E6</color>
+    <color name="unhighlight">#AEAEAE</color>
+    <color name="unable">@color/unhighlight</color>
+    <color name="occupying_text">@color/unhighlight</color>
+    <color name="zone_line">@color/unhighlight</color>
     <color name="light_blue">#26C6DC</color>
     <color name="dark_blue">#00A0B7</color>
     <color name="light_green">#8BC34A</color>
@@ -30,6 +40,7 @@
     <color name="dark_black">#121011</color>
     <color name="tab_normal">#ADADAD</color>
     <color name="tab_select">@color/main_pink</color>
+
 
     <color name="txt_lvl_1">@color/light_black</color>
     <color name="txt_lvl_2">#545454</color>

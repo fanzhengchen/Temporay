@@ -49,5 +49,16 @@
     <string name="share_title">万事叮当--让你遇见更好的自己</string>
     <string name="share_content">万事叮当是一款快速团购APP</string>
 
+    <string name="my_information">我的资料</string>
+    <string name="balance_of_account">账户余额</string>
+    <string name="my_orders">我的订单</string>
+    <string name="group_buying_message">拼团消息</string>
+    <string name="share_app">分享叮当口袋</string>
+    <string name="setting">设置</string>
+
+    <string name="RMB">¥</string>
+
+    <string name="merchant_name">商家名称</string>
+    <string name="return_goods">退货</string>
 
 </resources>
