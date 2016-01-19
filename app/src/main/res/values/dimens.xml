@@ -19,4 +19,6 @@
     <integer name="txt_size_5">10</integer>
     <integer name="txt_size_6">8</integer>
 
+    <dimen name="global_margin_left">8dp</dimen>
+
 </resources>
