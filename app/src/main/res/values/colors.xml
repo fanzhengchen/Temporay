@@ -31,6 +31,7 @@
     <color name="occupying_text">@color/unhighlight</color>
     <color name="zone_line">@color/unhighlight</color>
     <color name="light_blue">#26C6DC</color>
+    <color name="order_list_divide_color">#F2F0F0</color>
     <color name="dark_blue">#00A0B7</color>
     <color name="light_green">#8BC34A</color>
     <color name="dark_green">#6D9F35</color>

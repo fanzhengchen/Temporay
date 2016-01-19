@@ -27,7 +27,7 @@
                 android:layout_marginRight="10dp"
                 android:text="@string/my_information"
                 android:textColor="@color/txt_lvl_3"
-                android:textSize="@dimen/txt_size_2" />
+                android:textSize="@dimen/txt_size_3" />
 
 
             <TextView
@@ -40,7 +40,7 @@
                 android:gravity="right"
                 android:text="@string/nickname"
                 android:textColor="@color/txt_lvl_3"
-                android:textSize="@dimen/txt_size_2" />
+                android:textSize="@dimen/txt_size_3" />
 
 
             <com.makeramen.roundedimageview.RoundedImageView
@@ -57,7 +57,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="50dp"
             android:orientation="horizontal">
 
             <TextView
@@ -66,7 +66,7 @@
                 android:layout_gravity="center_vertical"
                 android:text="@string/balance_of_account"
                 android:textColor="@color/txt_lvl_3"
-                android:textSize="@dimen/txt_size_2" />
+                android:textSize="@dimen/txt_size_3" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -76,7 +76,24 @@
                 android:gravity="right"
                 android:text="¥100"
                 android:textColor="@color/txt_lvl_3"
-                android:textSize="@dimen/txt_size_2" />
+                android:textSize="@dimen/txt_size_3" />
+        </LinearLayout>
+
+        <include layout="@layout/under_line" />
+
+        <LinearLayout
+            android:id="@+id/address_manage"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/address_manage"
+                android:textColor="@color/txt_lvl_3"
+                android:textSize="@dimen/txt_size_3" />
         </LinearLayout>
 
         <include layout="@layout/under_line" />
@@ -84,7 +101,7 @@
         <LinearLayout
             android:id="@+id/main_personal_order"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="50dp"
             android:orientation="horizontal">
 
             <TextView
@@ -93,7 +110,7 @@
                 android:layout_gravity="center_vertical"
                 android:text="@string/my_orders"
                 android:textColor="@color/txt_lvl_3"
-                android:textSize="@dimen/txt_size_2" />
+                android:textSize="@dimen/txt_size_3" />
         </LinearLayout>
 
         <include layout="@layout/under_line" />
@@ -109,7 +126,7 @@
                 android:layout_gravity="center_vertical"
                 android:text="@string/group_buying_message"
                 android:textColor="@color/txt_lvl_3"
-                android:textSize="@dimen/txt_size_2" />
+                android:textSize="@dimen/txt_size_3" />
         </LinearLayout>
 
     </LinearLayout>
@@ -124,7 +141,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="50dp"
             android:orientation="horizontal">
 
             <TextView
@@ -133,23 +150,23 @@
                 android:layout_gravity="center_vertical"
                 android:text="@string/share_app"
                 android:textColor="@color/txt_lvl_3"
-                android:textSize="@dimen/txt_size_2" />
+                android:textSize="@dimen/txt_size_3" />
         </LinearLayout>
 
         <include layout="@layout/under_line" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="50dp"
             android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:text="@string/my_orders"
+                android:text="@string/setting"
                 android:textColor="@color/txt_lvl_3"
-                android:textSize="@dimen/txt_size_2" />
+                android:textSize="@dimen/txt_size_3" />
         </LinearLayout>
 
 
