@@ -20,6 +20,7 @@ public class RoundedCornerTextView extends TextView {
     private int strokeWidth;
     private int backgroundColor;
     private int cornerWidth;
+    private int width, height;
 
     public RoundedCornerTextView(Context context) {
         super(context);
@@ -48,6 +49,11 @@ public class RoundedCornerTextView extends TextView {
         } finally {
             array.recycle();
         }
+    }
+
+    @Override
+    protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
+        super.onLayout(changed, left, top, right, bottom);
     }
 
     @Override
