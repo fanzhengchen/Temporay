@@ -5,11 +5,13 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AbsListView;
 import android.widget.TextView;
 
 import com.hcb.jingle.R;
 import com.hcb.jingle.bean.Consignee;
 import com.hcb.jingle.biz.ActivitySwitcher;
+import com.hcb.jingle.util.FormatUtil;
 
 import java.util.ArrayList;
 
@@ -21,6 +23,7 @@ import butterknife.ButterKnife;
  */
 public class EditAddressAdapter extends AbsFitAdapter {
 
+    private int cellHeight = FormatUtil.pixOfDip(80);
     private ArrayList<Consignee> data;
     private Activity activity;
     private LayoutInflater inflater;
@@ -40,7 +43,8 @@ public class EditAddressAdapter extends AbsFitAdapter {
     public View getView(int position, View view, ViewGroup parent) {
         ViewHolder holder = null;
         if (view == null) {
-            view = inflater.inflate(R.layout.cell_edit_address, null);
+            view = View.inflate(parent.getContext(), R.layout.cell_edit_address, null);
+            view.setLayoutParams(new AbsListView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, cellHeight));
             holder = new ViewHolder();
             ButterKnife.bind(holder, view);
             view.setTag(holder);
