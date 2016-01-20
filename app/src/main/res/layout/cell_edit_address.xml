@@ -6,14 +6,17 @@
     android:background="@color/white"
     android:orientation="horizontal">
 
-    <com.hcb.jingle.widget.RCTextView
+    <ImageView
         android:layout_width="10dp"
         android:layout_height="10dp"
         android:layout_gravity="center_vertical"
         android:layout_marginLeft="20dp"
-        app:backgroundColor="@color/main_blue"
-        app:cornerWidth="5dp" />
+        android:orientation="horizontal"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/selected_radio_button">
 
+
+    </ImageView>
 
     <LinearLayout
         android:layout_width="match_parent"

@@ -1,6 +1,7 @@
 package com.hcb.jingle.adapter;
 
 import android.app.Activity;
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,7 +32,7 @@ public class EditAddressAdapter extends AbsFitAdapter {
     public EditAddressAdapter(Activity activity, ArrayList<Consignee> data) {
         this.data = data;
         this.activity = activity;
-        this.inflater = LayoutInflater.from(activity);
+        this.inflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
     @Override
