@@ -59,6 +59,9 @@ public class CommodityAdapter extends PagableAdapter {
     @Override
     protected void bandData(int position, View convertView) {
         ViewHolder h = (ViewHolder) convertView.getTag();
+        if(!isHomeFrg){
+            h.linear_tag.setVisibility(View.INVISIBLE);
+        }
     }
 
 //    @Override
