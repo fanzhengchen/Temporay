@@ -239,6 +239,7 @@
             app:strokeWidth="1dp" />
 
         <com.hcb.jingle.widget.RCTextView
+            android:id="@+id/cell_my_order_look_up_order"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right"

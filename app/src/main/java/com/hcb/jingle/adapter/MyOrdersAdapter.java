@@ -15,7 +15,9 @@ import android.widget.TextView;
 import com.hcb.jingle.R;
 import com.hcb.jingle.bean.MyOrder;
 import com.hcb.jingle.bean.MyOrderViewHolder;
+import com.hcb.jingle.biz.ActivitySwitcher;
 import com.hcb.jingle.biz.OrderManager;
+import com.hcb.jingle.frg.order.OrderDetailFrg;
 import com.hcb.jingle.widget.RCTextView;
 
 import java.util.ArrayList;
@@ -60,6 +62,12 @@ public class MyOrdersAdapter extends AbsFitAdapter {
         }
 
         OrderManager.fillData(data.get(position), holder, position);
+        holder.getLookUp().setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ActivitySwitcher.startFragment(activity, OrderDetailFrg.class);
+            }
+        });
         return view;
     }
 

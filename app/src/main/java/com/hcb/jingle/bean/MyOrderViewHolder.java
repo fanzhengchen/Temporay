@@ -25,6 +25,8 @@ public class MyOrderViewHolder {
     RCTextView btn2;
     @Bind(R.id.cell_my_order_goods_img)
     ImageView imageView;
+    @Bind(R.id.cell_my_order_look_up_order)
+    TextView lookUp;
 
     public TextView getDate() {
         return date;
@@ -88,5 +90,13 @@ public class MyOrderViewHolder {
 
     public void setImageView(ImageView imageView) {
         this.imageView = imageView;
+    }
+
+    public TextView getLookUp() {
+        return lookUp;
+    }
+
+    public void setLookUp(TextView lookUp) {
+        this.lookUp = lookUp;
     }
 }

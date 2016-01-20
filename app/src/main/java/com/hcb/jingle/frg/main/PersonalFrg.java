@@ -7,6 +7,7 @@ import android.widget.LinearLayout;
 import com.hcb.jingle.R;
 import com.hcb.jingle.biz.ActivitySwitcher;
 import com.hcb.jingle.frg.order.MyOrdersFrg;
+import com.hcb.jingle.frg.order.ReturnGoodsFrg;
 
 import java.util.List;
 
@@ -20,6 +21,8 @@ public class PersonalFrg extends CachableFrg {
 
     @Bind(R.id.main_personal_order)
     LinearLayout myOrders;
+
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -48,6 +51,10 @@ public class PersonalFrg extends CachableFrg {
         ActivitySwitcher.startFragment(getActivity(), MyOrdersFrg.class);
     }
 
+    @OnClick(R.id.frg_personal_share)
+    public void shareApp() {
+        ActivitySwitcher.startFragment(getActivity(), ReturnGoodsFrg.class);
+    }
 
 
 }

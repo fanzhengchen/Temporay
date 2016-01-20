@@ -12,6 +12,7 @@
     <string name="empty_fornow">暂无内容</string>
     <string name="load_err_retry">加载失败，点击重试</string>
     <string name="upload_success">上传成功</string>
+    <string name="submit">提交</string>
     <string name="cancel">取消</string>
     <string name="save">保存</string>
     <string name="confirm">确定</string>
@@ -50,6 +51,7 @@
     <string name="share_title">万事叮当--让你遇见更好的自己</string>
     <string name="share_content">万事叮当是一款快速团购APP</string>
 
+    <string name="add_image">添加图片</string>
     <string name="my_information">我的资料</string>
     <string name="balance_of_account">账户余额</string>
     <string name="my_orders">我的订单</string>
@@ -69,8 +71,18 @@
     <string name="total">合计</string>
     <string name="cancel_group">取消参团</string>
     <string name="accept_group">接受参团</string>
+    <string name="input_reason_returning_goods">请输入退货理由</string>
+    <string name="consignee">收货人</string>
+    <string name="order_number">订单编号</string>
+    <string name="tracking_number">运单号</string>
+    <string name="express_info">物流信息</string>
 
     <string name="look_up_order">查看订单</string>
     <string name="decline_group">不接受参团</string>
+
+    <string name="delivery_address">收货地址</string>
+    <string name="address_manager">收货地址管理</string>
+    <string name="order_detail">订单详情</string>
+    <string name="return_goods_illustration">退货说明</string>
 
 </resources>
