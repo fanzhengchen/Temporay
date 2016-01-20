@@ -49,8 +49,10 @@ public class MyBalanceFrg extends TitleFragment {
         rootView = inflater.inflate(R.layout.frg_list_view, container, false);
         ButterKnife.bind(this, rootView);
         header = View.inflate(getContext(), R.layout.header_balance_list, null);
-        header.setLayoutParams(new AbsListView.LayoutParams(-ViewGroup.LayoutParams.MATCH_PARENT, headHeight));
-        balance = (TextView) header.findViewById(R.id.frg_balance_number);
+        header.setLayoutParams(new AbsListView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, headHeight));
+
+        listView.addHeaderView(header);
+
         setUpPtr();
         loadData();
         return rootView;
@@ -71,6 +73,7 @@ public class MyBalanceFrg extends TitleFragment {
     }
 
     private void loadData() {
+        balance = (TextView) header.findViewById(R.id.frg_balance_number);
         balance.setText(GlobalConsts.RMB + "10000000");
         ArrayList<BalanceVO> data = new ArrayList<>();
         for (int i = 0; i < 10; ++i) {
@@ -80,7 +83,6 @@ public class MyBalanceFrg extends TitleFragment {
             data.add(vo);
         }
         adapter = new BalanceAdapter(data);
-        listView.addHeaderView(header);
         listView.setAdapter(adapter);
     }
 }
