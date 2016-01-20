@@ -123,4 +123,5 @@
             android:textColor="@color/txt_lvl_3" />
     </LinearLayout>
 
+    <include layout="@layout/under_line" />
 </LinearLayout>
