@@ -23,7 +23,6 @@ public class PersonalFrg extends CachableFrg {
     LinearLayout myOrders;
 
 
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,11 +49,4 @@ public class PersonalFrg extends CachableFrg {
     public void goToMyOrders() {
         ActivitySwitcher.startFragment(getActivity(), MyOrdersFrg.class);
     }
-
-    @OnClick(R.id.frg_personal_share)
-    public void shareApp() {
-        ActivitySwitcher.startFragment(getActivity(), ReturnGoodsFrg.class);
-    }
-
-
 }

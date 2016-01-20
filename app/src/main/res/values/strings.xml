@@ -79,6 +79,7 @@
 
     <string name="look_up_order">查看订单</string>
     <string name="decline_group">不接受参团</string>
+    <string name="leave_message_and_ask">留言询问</string>
 
     <string name="delivery_address">收货地址</string>
     <string name="address_manager">收货地址管理</string>

@@ -214,10 +214,11 @@
 
         <com.hcb.jingle.widget.RCTextView
             android:id="@+id/cell_my_order_btn1"
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/btn_order_detail_width"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
             android:layout_marginRight="10dp"
+            android:gravity="center"
             android:padding="5dp"
             android:text="@string/look_up_order"
             android:textColor="@color/txt_lvl_3"
@@ -227,10 +228,11 @@
 
         <com.hcb.jingle.widget.RCTextView
             android:id="@+id/cell_my_order_btn2"
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/btn_order_detail_width"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
             android:layout_marginRight="10dp"
+            android:gravity="center"
             android:padding="5dp"
             android:text="@string/look_up_order"
             android:textColor="@color/txt_lvl_3"
@@ -240,9 +242,10 @@
 
         <com.hcb.jingle.widget.RCTextView
             android:id="@+id/cell_my_order_look_up_order"
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/btn_order_detail_width"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
+            android:gravity="center"
             android:padding="5dp"
             android:text="@string/look_up_order"
             android:textColor="@color/txt_lvl_3"
