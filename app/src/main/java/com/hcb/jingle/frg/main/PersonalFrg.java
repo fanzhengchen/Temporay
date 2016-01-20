@@ -9,6 +9,8 @@ import com.hcb.jingle.biz.ActivitySwitcher;
 import com.hcb.jingle.frg.AddressManageFrg;
 import com.hcb.jingle.frg.order.MyOrdersFrg;
 import com.hcb.jingle.frg.order.ReturnGoodsFrg;
+import com.hcb.jingle.frg.personal.MyBalanceFrg;
+import com.hcb.jingle.frg.personal.MyInfoFrg;
 
 import java.util.List;
 
@@ -45,6 +47,15 @@ public class PersonalFrg extends CachableFrg {
     protected void initView(Bundle savedInstanceState) {
     }
 
+    @OnClick(R.id.main_personal_info)
+    public void goToMyInfo() {
+        ActivitySwitcher.startFragment(getActivity(), MyInfoFrg.class);
+    }
+
+    @OnClick(R.id.main_personal_balance)
+    public void goToMyBalance() {
+        ActivitySwitcher.startFragment(getActivity(), MyBalanceFrg.class);
+    }
 
     @OnClick(R.id.main_personal_order)
     public void goToMyOrders() {

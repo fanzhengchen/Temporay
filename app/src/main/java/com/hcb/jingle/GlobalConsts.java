@@ -39,6 +39,7 @@ public class GlobalConsts {
     public final static String SHARE_URL = "https://www.baidu.com";
 
     public final static String JINGLE_PWD_KEY = "jingle";
+    public final static String RMB = "¥";
 
     public final static int ACTREQ_PICTURE = 99;
     public final static int ACTREQ_CAMERA = 100;

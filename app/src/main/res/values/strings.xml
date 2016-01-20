@@ -3,6 +3,8 @@
 
     <string name="homepage">团购</string>
     <string name="mall">商城</string>
+    <string name="male">男</string>
+    <string name="female">女</string>
     <string name="admin">管家</string>
     <string name="zone">社区</string>
     <string name="personal">个人</string>
@@ -37,6 +39,10 @@
     <string name="have_read_and_agreed_with">已阅读并同意</string>
 
     <string name="nickname">昵称</string>
+    <string name="gender">性别</string>
+    <string name="city">城市</string>
+    <string name="birth_date">出生日期</string>
+    <string name="username_nickname">用户名/昵称</string>
     <string name="pick_avatar">选择头像</string>
     <string name="imageGallery">相册</string>
     <string name="takePhoto">拍照</string>
@@ -54,8 +60,10 @@
 
     <string name="add_image">添加图片</string>
     <string name="add_new_address">添加新地址</string>
+    <string name="portrait">头像</string>
     <string name="my_information">我的资料</string>
     <string name="balance_of_account">账户余额</string>
+    <string name="my_balance">我的余额</string>
     <string name="my_orders">我的订单</string>
     <string name="address_manage">收货地址管理</string>
     <string name="group_buying_message">拼团消息</string>

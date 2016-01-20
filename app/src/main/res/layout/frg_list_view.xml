@@ -5,6 +5,7 @@
     android:orientation="vertical">
 
     <in.srain.cube.views.ptr.PtrFrameLayout
+        android:id="@+id/ptrFrameLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
