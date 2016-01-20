@@ -49,4 +49,9 @@ public class PersonalFrg extends CachableFrg {
     public void goToMyOrders() {
         ActivitySwitcher.startFragment(getActivity(), MyOrdersFrg.class);
     }
+
+    @OnClick(R.id.address_manage)
+    public void manageAddress() {
+
+    }
 }
