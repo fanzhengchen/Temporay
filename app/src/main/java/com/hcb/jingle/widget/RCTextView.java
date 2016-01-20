@@ -52,7 +52,7 @@ public class RCTextView extends TextView {
         TypedArray array = theme.obtainStyledAttributes(attrs, R.styleable.RCTextView, 0, 0);
         try {
             strokeWidth = array.getDimensionPixelSize(R.styleable.RCTextView_strokeWidth, 2);
-            strokeColor = array.getColor(R.styleable.RCTextView_strokeColor, Color.BLACK);
+            strokeColor = array.getColor(R.styleable.RCTextView_strokeColor, 0);
             backgroundColor = array.getColor(R.styleable.RCTextView_backgroundColor, Color.WHITE);
             cornerWidth = array.getDimensionPixelSize(R.styleable.RCTextView_cornerWidth, 0);
         } finally {

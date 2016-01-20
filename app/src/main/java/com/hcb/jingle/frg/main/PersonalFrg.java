@@ -6,6 +6,7 @@ import android.widget.LinearLayout;
 
 import com.hcb.jingle.R;
 import com.hcb.jingle.biz.ActivitySwitcher;
+import com.hcb.jingle.frg.AddressManageFrg;
 import com.hcb.jingle.frg.order.MyOrdersFrg;
 import com.hcb.jingle.frg.order.ReturnGoodsFrg;
 
@@ -52,6 +53,6 @@ public class PersonalFrg extends CachableFrg {
 
     @OnClick(R.id.address_manage)
     public void manageAddress() {
-
+        ActivitySwitcher.startFragment(getActivity(), AddressManageFrg.class);
     }
 }
