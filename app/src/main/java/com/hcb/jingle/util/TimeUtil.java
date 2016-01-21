@@ -1,5 +1,8 @@
 package com.hcb.jingle.util;
 
+import com.hcb.jingle.GlobalConsts;
+
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.TimeZone;
@@ -88,4 +91,19 @@ public class TimeUtil {
         return null != date && date.startsWith(FormatUtil.getDateString(FormatUtil.DATE_FORMAT));
     }
 
+    public static String getCurrentTime() {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(GlobalConsts.DATE_FORMATE);
+        return simpleDateFormat.format(new Date());
+    }
+
+    public static int getCurrentHour() {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Calendar calendar = simpleDateFormat.getCalendar();
+        return calendar.get(Calendar.HOUR_OF_DAY);
+    }
+
+    public static String convertToData(long millis) {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        return simpleDateFormat.format(new Date(millis));
+    }
 }

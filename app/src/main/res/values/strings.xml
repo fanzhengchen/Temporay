@@ -47,17 +47,19 @@
     <string name="imageGallery">相册</string>
     <string name="takePhoto">拍照</string>
     <string name="done">完成</string>
-    <string name="version">版本信息</string>
+    <string name="version">版本</string>
+    <string name="version_number">版本号</string>
     <string name="logout">退出登录</string>
     <string name="wchat_pay">微信支付</string>
     <string name="ali_pay">支付宝支付</string>
     <string name="share">分享</string>
     <string name="about_app">关于万事叮当</string>
 
-
     <string name="share_title">万事叮当--让你遇见更好的自己</string>
     <string name="share_content">万事叮当是一款快速团购APP</string>
     <string name="goods_name">商品名称</string>
+    <string name="goods_size">商品规格</string>
+    <string name="goods_amount">商品数量</string>
 
     <string name="add_image">添加图片</string>
     <string name="add_new_address">添加新地址</string>
@@ -75,10 +77,11 @@
     <string name="RMB">¥</string>
     <string name="pending">待处理</string>
     <string name="version_info">版本信息</string>
+    <string name="software_name">软件名称</string>
     <string name="exit">退出</string>
 
 
-
+    <string name="group_status">拼团状态</string>
     <string name="merchant_name">商家名称</string>
     <string name="return_goods">退货</string>
     <string name="specification_type">规格类型</string>

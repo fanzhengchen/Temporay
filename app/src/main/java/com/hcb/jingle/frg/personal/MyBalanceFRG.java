@@ -14,6 +14,7 @@ import com.hcb.jingle.GlobalConsts;
 import com.hcb.jingle.R;
 import com.hcb.jingle.adapter.BalanceAdapter;
 import com.hcb.jingle.bean.BalanceVO;
+import com.hcb.jingle.frg.PtrListViewFrg;
 import com.hcb.jingle.frg.TitleFragment;
 import com.hcb.jingle.util.FormatUtil;
 
@@ -28,15 +29,11 @@ import in.srain.cube.views.ptr.PtrHandler;
 /**
  * Created by Administrator on 2016/1/20.
  */
-public class MyBalanceFrg extends TitleFragment {
+public class MyBalanceFrg extends PtrListViewFrg {
     private BalanceAdapter adapter;
     private TextView balance;
     private View header;
     private int headHeight = FormatUtil.pixOfDip(200);
-    @Bind(R.id.list_view)
-    ListView listView;
-    @Bind(R.id.ptrFrameLayout)
-    PtrFrameLayout ptrFrameLayout;
 
     @Override
     public int getTitleId() {
@@ -46,30 +43,13 @@ public class MyBalanceFrg extends TitleFragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        rootView = inflater.inflate(R.layout.frg_list_view, container, false);
-        ButterKnife.bind(this, rootView);
+        rootView = super.onCreateView(inflater, container, savedInstanceState);
+        super.setUpPtr();
         header = View.inflate(getContext(), R.layout.header_balance_list, null);
         header.setLayoutParams(new AbsListView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, headHeight));
-
         listView.addHeaderView(header);
-
-        setUpPtr();
         loadData();
         return rootView;
-    }
-
-    private void setUpPtr() {
-        ptrFrameLayout.setPtrHandler(new PtrHandler() {
-            @Override
-            public boolean checkCanDoRefresh(PtrFrameLayout frame, View content, View header) {
-                return PtrDefaultHandler.checkContentCanBePulledDown(frame, content, header);
-            }
-
-            @Override
-            public void onRefreshBegin(PtrFrameLayout frame) {
-                ptrFrameLayout.refreshComplete();
-            }
-        });
     }
 
     private void loadData() {

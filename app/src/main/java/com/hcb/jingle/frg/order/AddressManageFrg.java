@@ -5,11 +5,13 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import com.hcb.jingle.R;
 import com.hcb.jingle.adapter.EditAddressAdapter;
 import com.hcb.jingle.bean.Consignee;
+import com.hcb.jingle.frg.PtrListViewFrg;
 import com.hcb.jingle.frg.TitleFragment;
 
 import java.util.ArrayList;
@@ -20,12 +22,10 @@ import butterknife.ButterKnife;
 /**
  * Created by Administrator on 2016/1/20.
  */
-public class AddressManageFrg extends TitleFragment {
-
-    @Bind(R.id.list_view)
-    ListView listView;
+public class AddressManageFrg extends PtrListViewFrg {
 
     private EditAddressAdapter adapter;
+    private View footer;
 
     @Override
     public int getTitleId() {
@@ -35,9 +35,11 @@ public class AddressManageFrg extends TitleFragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        rootView = inflater.inflate(R.layout.frg_address_manager, container, false);
-        ButterKnife.bind(this, rootView);
-        loadData();
+        rootView = super.onCreateView(inflater, container, savedInstanceState);
+        footer = View.inflate(getContext(), R.layout.cell_add_new_address, null);
+        ptrFrameLayout.setLayoutParams(new LinearLayout.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT, 1.0f));
+//        loadData();
         return rootView;
     }
 

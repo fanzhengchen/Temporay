@@ -23,6 +23,7 @@ public class GlobalConsts {
     private static final String WX_SECRET_RELEASE = "waitToBeAdd";
     public static final String WX_ID = DEBUG ? WX_ID_DEBUG : WX_ID_RELEASE;
     public static final String WX_SECRET = DEBUG ? WX_SECRET_DEBUG : WX_SECRET_RELEASE;
+    public static final String DATE_FORMATE = "yyyy-MM-dd HH:mm:ss";
 
     //------------------QQ授权-------------------
     public static final String QQ_ID = "1105117308";
