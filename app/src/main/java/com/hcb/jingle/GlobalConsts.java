@@ -11,18 +11,24 @@ public class GlobalConsts {
     public static final String UPLOAD_IMAGE = "http://121.199.47.167/honey/service_image/index.php";
 
     //------------------友盟统计分享-------------------
-    //// TODO: 2016/1/15 umeng KEY, waitToBeAdd
     private static final String UMENG_KEY_DEBUG = "5698d68e67e58ed3c400281e";
-    private static final String UMENG_KEY_RELEASE = "waitToBeAdd";
+    private static final String UMENG_KEY_RELEASE = "56a0d0f3e0f55aa4df001fc9";
     public static final String UMENG_APPKEY = DEBUG ? UMENG_KEY_DEBUG : UMENG_KEY_RELEASE;
 
-    //------------------微信分享-------------------
-    private static final String WX_ID_DEBUG = "wxe6c31febbd05d58d";
-    private static final String WX_SECRET_DEBUG = "1ae2cd63192bd304e10869eeeed1ce8f";
+    //------------------微信分享 & Pay -------------------
+    private static final String WX_ID_DEBUG =
+            //"wx027975c909c0604e";//Nixi
+            "wxe6c31febbd05d58d";//huancheclub
+    private static final String WX_SECRET_DEBUG =
+            //"1ae2cd63192bd304e10869eeeed1ce8f";//Nixi
+            "1ae2cd63192bd304e10869eeeed1ce8f";//huancheclub
     private static final String WX_ID_RELEASE = "waitToBeAdd";
     private static final String WX_SECRET_RELEASE = "waitToBeAdd";
     public static final String WX_ID = DEBUG ? WX_ID_DEBUG : WX_ID_RELEASE;
     public static final String WX_SECRET = DEBUG ? WX_SECRET_DEBUG : WX_SECRET_RELEASE;
+    public static final String WXPAY_KEY =
+            "efbbec4b7b7440e339f1192d0733082b";//huancheclub
+//            "881310896b75ddf7bd544acaa9bc052e";//Nixi
 
     //------------------QQ授权-------------------
     public static final String QQ_ID = "1105117308";
