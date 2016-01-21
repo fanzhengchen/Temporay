@@ -5,6 +5,7 @@ import android.view.View;
 
 import com.hcb.jingle.R;
 import com.hcb.jingle.biz.ActivitySwitcher;
+import com.hcb.jingle.biz.ShareHelper;
 import com.hcb.jingle.frg.order.AddressManageFrg;
 import com.hcb.jingle.frg.order.MyOrdersFrg;
 import com.hcb.jingle.frg.personal.GroupInfoFrg;
@@ -13,6 +14,7 @@ import com.hcb.jingle.frg.personal.MyInfoFrg;
 import com.hcb.jingle.frg.personal.SettingFrg;
 
 import butterknife.Bind;
+import butterknife.OnClick;
 
 /**
  * Created by yang.zhao on 2016/01/15.
@@ -59,5 +61,9 @@ public class PersonalFrg extends CachableFrg {
         }
     }
 
+    @OnClick(R.id.main_personal_share)
+    public void share() {
+        ShareHelper.shareApp(getActivity());
+    }
 
 }
