@@ -8,13 +8,11 @@ import android.widget.RadioGroup;
 
 import com.hcb.jingle.GlobalBeans;
 import com.hcb.jingle.R;
+import com.hcb.jingle.biz.Alipay;
 import com.hcb.jingle.biz.EventCenter;
 import com.hcb.jingle.biz.EventCenter.EventListener;
 import com.hcb.jingle.biz.EventCenter.EventType;
 import com.hcb.jingle.biz.WxPay;
-import com.hcb.jingle.loader.base.AbsLoader;
-import com.hcb.jingle.loader.user.WxOrderFetcher;
-import com.hcb.jingle.model.pay.WxOrderInBody;
 import com.hcb.jingle.util.ToastUtil;
 
 import butterknife.Bind;
@@ -63,6 +61,7 @@ public class PaymentDlg extends BaseDialog implements EventListener {
                 break;
             case R.id.pay_wx:
                 ToastUtil.show("支付宝支付");
+                aliPay();
                 break;
             case R.id.pay_ali:
                 ToastUtil.show("微信支付");
@@ -71,18 +70,12 @@ public class PaymentDlg extends BaseDialog implements EventListener {
         }
     }
 
+    public void aliPay() {
+        new Alipay(act).payFor("《葬花宝典》珍藏版", "全球限量8本，卖完退隐", 1);
+    }
+
     public void wxPay() {
-        new WxOrderFetcher().fetch(1, new AbsLoader.RespReactor<WxOrderInBody>() {
-            @Override
-            public void succeed(WxOrderInBody body) {
-                WxPay.callPay(getContext(), body.getWxOrder());
-            }
-
-            @Override
-            public void failed(String code, String reason) {
-
-            }
-        });
+        new WxPay(act).payFor("《葬花宝典》珍藏版", "全球限量8本，卖完退隐", 1);
     }
 
     @Override
