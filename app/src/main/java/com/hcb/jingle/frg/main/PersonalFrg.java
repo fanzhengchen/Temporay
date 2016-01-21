@@ -1,6 +1,5 @@
 package com.hcb.jingle.frg.main;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.widget.LinearLayout;
 
@@ -8,11 +7,8 @@ import com.hcb.jingle.R;
 import com.hcb.jingle.biz.ActivitySwitcher;
 import com.hcb.jingle.frg.AddressManageFrg;
 import com.hcb.jingle.frg.order.MyOrdersFrg;
-import com.hcb.jingle.frg.order.ReturnGoodsFrg;
-import com.hcb.jingle.frg.personal.MyBalanceFrg;
+import com.hcb.jingle.frg.personal.BalanceFrg;
 import com.hcb.jingle.frg.personal.MyInfoFrg;
-
-import java.util.List;
 
 import butterknife.Bind;
 import butterknife.OnClick;
@@ -54,7 +50,7 @@ public class PersonalFrg extends CachableFrg {
 
     @OnClick(R.id.main_personal_balance)
     public void goToMyBalance() {
-        ActivitySwitcher.startFragment(getActivity(), MyBalanceFrg.class);
+        ActivitySwitcher.startFragment(getActivity(), BalanceFrg.class);
     }
 
     @OnClick(R.id.main_personal_order)

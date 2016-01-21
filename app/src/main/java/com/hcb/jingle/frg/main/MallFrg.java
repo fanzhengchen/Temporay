@@ -6,6 +6,7 @@ import android.view.View;
 import com.hcb.jingle.R;
 import com.hcb.jingle.biz.ShareHelper;
 import com.hcb.jingle.biz.WxPay;
+import com.hcb.jingle.dialog.PaymentDlg;
 import com.hcb.jingle.loader.base.AbsLoader;
 import com.hcb.jingle.loader.user.WxOrderFetcher;
 import com.hcb.jingle.model.pay.WxOrderInBody;
@@ -35,20 +36,10 @@ public class MallFrg extends CachableFrg {
     }
 
     /////////////////////////////////////
-    /// test weixin pay
-    @OnClick(R.id.btn_wxpay)
-    public void wxPay(View view) {
-        new WxOrderFetcher().fetch(1, new AbsLoader.RespReactor<WxOrderInBody>() {
-            @Override
-            public void succeed(WxOrderInBody body) {
-                WxPay.callPay(getActivity(), body.getWxOrder());
-            }
-
-            @Override
-            public void failed(String code, String reason) {
-
-            }
-        });
+    /// test pay
+    @OnClick(R.id.btn_paytest)
+    public void testPay(View view) {
+        new PaymentDlg().setMoney(100).show(getFragmentManager(), "pay");
     }
 
 }
