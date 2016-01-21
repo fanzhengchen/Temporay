@@ -37,6 +37,9 @@ public class Alipay {
 
             @Override
             public void failed(String code, String reason) {
+                GlobalBeans.getSelf().getEventCenter().sendType(
+                        EventCenter.EventType.EVT_PAY_FAILED
+                );
                 ToastUtil.show(reason);
             }
         });
@@ -47,6 +50,7 @@ public class Alipay {
             @Override
             public void run() {
                 String result = new PayTask(act).pay(payInfo, true);
+                // todo 分析结果
                 evtPaySucceed();
             }
         });
