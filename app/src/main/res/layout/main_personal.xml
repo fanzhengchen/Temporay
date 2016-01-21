@@ -132,12 +132,12 @@
                 android:textSize="@dimen/txt_size_3" />
 
             <com.hcb.jingle.widget.RCTextView
-                android:layout_width="6dp"
-                android:layout_height="6dp"
+                android:layout_width="8dp"
+                android:layout_height="8dp"
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="10dp"
                 app:backgroundColor="@color/main_red"
-                app:cornerWidth="3dp" />
+                app:cornerWidth="4dp" />
         </LinearLayout>
 
     </LinearLayout>

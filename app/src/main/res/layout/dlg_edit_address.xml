@@ -16,6 +16,27 @@
         android:background="@drawable/bg_round_corner"
         android:orientation="vertical">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="4dp"
+                android:layout_marginTop="4dp"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:id="@+id/exit"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/dlg_close" />
+
+        </LinearLayout>
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -38,10 +59,13 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
                 android:background="@color/white"
                 android:gravity="center_vertical"
                 android:textColor="@color/txt_lvl_3"
                 android:textSize="@dimen/txt_size_3" />
+
 
         </LinearLayout>
 
@@ -68,6 +92,7 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="5dp"
+                android:layout_marginRight="10dp"
                 android:background="@color/white"
                 android:gravity="center_vertical"
                 android:textColor="@color/txt_lvl_3"
@@ -98,8 +123,8 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center_vertical"
                 android:layout_margin="10dp"
-                android:gravity="top|left"
                 android:background="@drawable/bg_edit_text"
+                android:gravity="top|left"
                 android:lines="3"
                 android:padding="10dp"
                 android:textColor="@color/txt_lvl_3"

@@ -9,6 +9,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.hcb.jingle.R;
+import com.hcb.jingle.util.StringUtil;
+import com.hcb.jingle.util.ToastUtil;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -50,8 +52,29 @@ public class EditAddressDlg extends BaseDialog {
     @OnClick(R.id.dlg_edit_address_confirm)
     public void confirmDismiss() {
         if (listener != null) {
+
+            if (StringUtil.isEmpty(name.getText().toString())) {
+                ToastUtil.show("姓名不能为空");
+                return;
+            }
+
+            if (StringUtil.isEmpty(phone.getText().toString())) {
+                ToastUtil.show("姓名不能为空");
+                return;
+            }
+
+            if (StringUtil.isEmpty(address.getText().toString())) {
+                ToastUtil.show("地址不能为空");
+                return;
+            }
+
             listener.onConfirm(name, phone, address);
         }
+        dismiss();
+    }
+
+    @OnClick(R.id.exit)
+    public void exit() {
         dismiss();
     }
 }
