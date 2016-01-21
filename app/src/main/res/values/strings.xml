@@ -3,8 +3,7 @@
 
     <string name="homepage">团购</string>
     <string name="mall">商城</string>
-    <string name="male">男</string>
-    <string name="female">女</string>
+
     <string name="admin">管家</string>
     <string name="zone">社区</string>
     <string name="personal">个人</string>
@@ -20,9 +19,10 @@
     <string name="save">保存</string>
     <string name="confirm">确定</string>
     <string name="delete">删除</string>
-
+    <string name="male">男</string>
+    <string name="female">女</string>
     <string name="login">登录</string>
-    <string name="goods_name">商品名称</string>
+    <string name="user_protocol">用户协议</string>
     <string name="login_with_qq">QQ号登录</string>
     <string name="qq_not_installed">请先安装QQ客户端</string>
     <string name="qq_auth_failed">QQ授权失败</string>
@@ -47,16 +47,17 @@
     <string name="imageGallery">相册</string>
     <string name="takePhoto">拍照</string>
     <string name="done">完成</string>
-
     <string name="version">版本信息</string>
     <string name="logout">退出登录</string>
-
     <string name="wchat_pay">微信支付</string>
     <string name="ali_pay">支付宝支付</string>
-
     <string name="share">分享</string>
+    <string name="about_app">关于万事叮当</string>
+
+
     <string name="share_title">万事叮当--让你遇见更好的自己</string>
     <string name="share_content">万事叮当是一款快速团购APP</string>
+    <string name="goods_name">商品名称</string>
 
     <string name="add_image">添加图片</string>
     <string name="add_new_address">添加新地址</string>
@@ -73,6 +74,10 @@
     <string name="order_status">订单状态</string>
     <string name="RMB">¥</string>
     <string name="pending">待处理</string>
+    <string name="version_info">版本信息</string>
+    <string name="exit">退出</string>
+
+
 
     <string name="merchant_name">商家名称</string>
     <string name="return_goods">退货</string>

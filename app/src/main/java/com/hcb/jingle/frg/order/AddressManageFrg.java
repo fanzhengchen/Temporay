@@ -1,4 +1,4 @@
-package com.hcb.jingle.frg;
+package com.hcb.jingle.frg.order;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -10,6 +10,7 @@ import android.widget.ListView;
 import com.hcb.jingle.R;
 import com.hcb.jingle.adapter.EditAddressAdapter;
 import com.hcb.jingle.bean.Consignee;
+import com.hcb.jingle.frg.TitleFragment;
 
 import java.util.ArrayList;
 

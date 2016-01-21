@@ -118,6 +118,7 @@
         <include layout="@layout/under_line" />
 
         <LinearLayout
+            android:id="@+id/main_personal_group_info"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:orientation="horizontal">
@@ -159,6 +160,7 @@
         <include layout="@layout/under_line" />
 
         <LinearLayout
+            android:id="@+id/main_personal_setting"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:orientation="horizontal">

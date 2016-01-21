@@ -1,41 +1,40 @@
 package com.hcb.jingle.frg.main;
 
-import android.app.Activity;
 import android.os.Bundle;
-import android.widget.LinearLayout;
+import android.view.View;
 
 import com.hcb.jingle.R;
 import com.hcb.jingle.biz.ActivitySwitcher;
-import com.hcb.jingle.frg.AddressManageFrg;
+import com.hcb.jingle.frg.order.AddressManageFrg;
 import com.hcb.jingle.frg.order.MyOrdersFrg;
-import com.hcb.jingle.frg.order.ReturnGoodsFrg;
+import com.hcb.jingle.frg.personal.GroupInfoFrg;
 import com.hcb.jingle.frg.personal.MyBalanceFrg;
 import com.hcb.jingle.frg.personal.MyInfoFrg;
-
-import java.util.List;
+import com.hcb.jingle.frg.personal.SettingFrg;
 
 import butterknife.Bind;
-import butterknife.OnClick;
 
 /**
  * Created by yang.zhao on 2016/01/15.
  */
 public class PersonalFrg extends CachableFrg {
+    @Bind({
+            R.id.main_personal_info,
+            R.id.main_personal_balance,
+            R.id.address_manage,
+            R.id.main_personal_order,
+            R.id.main_personal_group_info,
+            R.id.main_personal_setting})
+    View[] views;
 
-    @Bind(R.id.main_personal_order)
-    LinearLayout myOrders;
-
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-    }
+    Class[] classes = {
+            MyInfoFrg.class,
+            MyBalanceFrg.class,
+            AddressManageFrg.class,
+            MyOrdersFrg.class,
+            GroupInfoFrg.class,
+            SettingFrg.class
+    };
 
     @Override
     protected int rootLayout() {
@@ -45,25 +44,18 @@ public class PersonalFrg extends CachableFrg {
 
     @Override
     protected void initView(Bundle savedInstanceState) {
+        handleSecondaryFrg();
     }
 
-    @OnClick(R.id.main_personal_info)
-    public void goToMyInfo() {
-        ActivitySwitcher.startFragment(getActivity(), MyInfoFrg.class);
-    }
-
-    @OnClick(R.id.main_personal_balance)
-    public void goToMyBalance() {
-        ActivitySwitcher.startFragment(getActivity(), MyBalanceFrg.class);
-    }
-
-    @OnClick(R.id.main_personal_order)
-    public void goToMyOrders() {
-        ActivitySwitcher.startFragment(getActivity(), MyOrdersFrg.class);
-    }
-
-    @OnClick(R.id.address_manage)
-    public void manageAddress() {
-        ActivitySwitcher.startFragment(getActivity(), AddressManageFrg.class);
+    private void handleSecondaryFrg() {
+        for (int i = 0; i < views.length; ++i) {
+            final int j = i;
+            views[i].setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    ActivitySwitcher.startFragment(getActivity(), classes[j]);
+                }
+            });
+        }
     }
 }
