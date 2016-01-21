@@ -1,15 +1,16 @@
 package com.hcb.jingle.util;
 
-import android.content.Context;
 import android.text.TextUtils;
-
-import com.hcb.jingle.R;
 
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 
 public class StringUtil {
+
+    public static boolean isEmpty(final String s) {
+        return null == s || s.trim().length() == 0;
+    }
 
     public static boolean isEqual(final String s1, final String s2) {
         return (s1 == null && s2 == null) || (null != s1 && s1.equals(s2));

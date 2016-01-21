@@ -8,6 +8,15 @@ public class GroupInfo {
     private String goodsName;
     private String goodsSize;
     private String goodsAmount;
+    private String time;
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
 
     public String getGroupStatus() {
         return groupStatus;

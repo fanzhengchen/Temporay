@@ -10,6 +10,7 @@ import android.widget.ListView;
 import com.hcb.jingle.R;
 import com.hcb.jingle.adapter.MyOrdersAdapter;
 import com.hcb.jingle.bean.MyOrder;
+import com.hcb.jingle.frg.PtrListViewFrg;
 import com.hcb.jingle.frg.TitleFragment;
 
 import java.util.ArrayList;
@@ -23,15 +24,10 @@ import in.srain.cube.views.ptr.PtrHandler;
 /**
  * Created by Administrator on 2016/1/19.
  */
-public class MyOrdersFrg extends TitleFragment {
+public class MyOrdersFrg extends PtrListViewFrg {
 
     private MyOrdersAdapter adapter = null;
     private ArrayList<MyOrder> orders;
-
-    @Bind(R.id.list_view)
-    ListView listView;
-    @Bind(R.id.frg_my_order_ptrFrameLayout)
-    PtrFrameLayout ptrFrameLayout;
 
     @Override
     public int getTitleId() {
@@ -41,25 +37,10 @@ public class MyOrdersFrg extends TitleFragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        rootView = inflater.inflate(R.layout.frg_my_order, container, false);
-        ButterKnife.bind(this, rootView);
-        setUpPtr();
+        rootView = super.onCreateView(inflater, container, savedInstanceState);
+        super.setUpPtr();
         loadData();
         return rootView;
-    }
-
-    private void setUpPtr() {
-        ptrFrameLayout.setPtrHandler(new PtrHandler() {
-            @Override
-            public boolean checkCanDoRefresh(PtrFrameLayout frame, View content, View header) {
-                return PtrDefaultHandler.checkContentCanBePulledDown(frame, content, header);
-            }
-
-            @Override
-            public void onRefreshBegin(PtrFrameLayout frame) {
-                ptrFrameLayout.refreshComplete();
-            }
-        });
     }
 
     private void loadData() {

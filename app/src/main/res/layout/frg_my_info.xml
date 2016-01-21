@@ -14,6 +14,7 @@
         android:paddingLeft="10dp">
 
         <LinearLayout
+            android:id="@+id/frg_my_info_portrait_layout"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:orientation="horizontal">
@@ -32,6 +33,7 @@
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_margin="10dp"
+                android:scaleType="centerCrop"
                 android:src="@mipmap/stub_avatar"
                 app:riv_corner_radius="3dp" />
 
@@ -40,6 +42,7 @@
         <include layout="@layout/under_line" />
 
         <LinearLayout
+            android:id="@+id/frg_my_info_nickname_layout"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:orientation="horizontal">
@@ -54,6 +57,7 @@
                 android:textSize="@dimen/txt_size_3" />
 
             <EditText
+                android:id="@+id/frg_my_info_nickname"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
@@ -69,7 +73,7 @@
         <include layout="@layout/under_line" />
 
         <LinearLayout
-            android:id="@+id/frg_my_info_gender"
+            android:id="@+id/frg_my_info_gender_layout"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:orientation="horizontal">
@@ -84,6 +88,7 @@
                 android:textSize="@dimen/txt_size_3" />
 
             <TextView
+                android:id="@+id/frg_my_info_gender"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -98,7 +103,7 @@
         <include layout="@layout/under_line" />
 
         <LinearLayout
-            android:id="@+id/frg_my_info_birth_date"
+            android:id="@+id/frg_my_info_birth_date_layout"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:orientation="horizontal">
@@ -113,6 +118,7 @@
                 android:textSize="@dimen/txt_size_3" />
 
             <TextView
+                android:id="@+id/frg_my_info_birth_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -127,6 +133,7 @@
         <include layout="@layout/under_line" />
 
         <LinearLayout
+            android:id="@+id/frg_my_info_city_layout"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:orientation="horizontal">
@@ -141,6 +148,7 @@
                 android:textSize="@dimen/txt_size_3" />
 
             <EditText
+                android:id="@+id/frg_my_info_city"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"

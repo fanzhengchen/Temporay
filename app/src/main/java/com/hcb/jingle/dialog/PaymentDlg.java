@@ -55,6 +55,8 @@ public class PaymentDlg extends BaseDialog implements EventListener {
 
     @OnClick(R.id.btn_confirm)
     public void surePay(View v) {
+        showProgressDialog("支付", "正在进行支付...");
+        dialog.setCancelable(true);
         switch (payGroup.getCheckedRadioButtonId()) {
             case R.id.pay_balance:
                 ToastUtil.show("余额支付");
@@ -75,17 +77,19 @@ public class PaymentDlg extends BaseDialog implements EventListener {
     }
 
     public void wxPay() {
-        new WxPay(act).payFor("《葬花宝典》珍藏版", "全球限量8本，卖完退隐", 1);
+        new WxPay(act).payFor(1);
     }
 
     @Override
     public void onEvent(EventCenter.HcbEvent e) {
         switch (e.type) {
             case EVT_PAY_SUCCEED:
+                dismissDialog();
                 ToastUtil.show("支付成功");
 
                 break;
             case EVT_PAY_FAILED:
+                dismissDialog();
                 ToastUtil.show("支付失败");
                 break;
         }

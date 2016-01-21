@@ -118,6 +118,7 @@
         <include layout="@layout/under_line" />
 
         <LinearLayout
+            android:id="@+id/main_personal_group_info"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:orientation="horizontal">
@@ -129,6 +130,14 @@
                 android:text="@string/group_buying_message"
                 android:textColor="@color/txt_lvl_3"
                 android:textSize="@dimen/txt_size_3" />
+
+            <com.hcb.jingle.widget.RCTextView
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                app:backgroundColor="@color/main_red"
+                app:cornerWidth="4dp" />
         </LinearLayout>
 
     </LinearLayout>
@@ -142,7 +151,7 @@
         android:paddingLeft="10dp">
 
         <LinearLayout
-            android:id="@+id/frg_personal_share"
+            android:id="@+id/main_personal_share"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:orientation="horizontal">
@@ -159,6 +168,7 @@
         <include layout="@layout/under_line" />
 
         <LinearLayout
+            android:id="@+id/main_personal_setting"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:orientation="horizontal">

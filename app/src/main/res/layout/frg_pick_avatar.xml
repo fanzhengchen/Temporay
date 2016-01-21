@@ -6,12 +6,12 @@
     android:background="#fff"
     tools:context=".MainActivity">
 
-    <com.hcb.honey.widget.ClipSquareImageView
+    <com.hcb.jingle.widget.ClipSquareImageView
         android:id="@+id/clipSquareIV"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-    <com.hcb.honey.widget.ClipSquareView
+    <com.hcb.jingle.widget.ClipSquareView
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
