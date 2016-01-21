@@ -59,7 +59,7 @@ public class EditAddressDlg extends BaseDialog {
             }
 
             if (StringUtil.isEmpty(phone.getText().toString())) {
-                ToastUtil.show("姓名不能为空");
+                ToastUtil.show("电话不能为空");
                 return;
             }
 
