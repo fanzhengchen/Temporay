@@ -11,14 +11,12 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.hcb.jingle.R;
-import com.hcb.jingle.adapter.EditAddressAdapter;
 import com.hcb.jingle.bean.Consignee;
 import com.hcb.jingle.dialog.EditAddressDlg;
 import com.hcb.jingle.frg.TitleFragment;
 import com.hcb.jingle.util.FormatUtil;
 
 import java.util.ArrayList;
-import java.util.Random;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -34,7 +32,6 @@ public class AddressManageFrg extends TitleFragment {
     RadioGroup radioGroup;
     @Bind(R.id.frg_address_manage_right)
     LinearLayout right;
-    private EditAddressAdapter adapter;
     private int cellHeight = FormatUtil.pixOfDip(80);
     private int dividerHeight = FormatUtil.pixOfDip(1);
     private View footer;
@@ -96,23 +93,6 @@ public class AddressManageFrg extends TitleFragment {
         View view = View.inflate(getContext(), layout, null);
         view.setLayoutParams(new RadioGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, height));
         return view;
-    }
-
-
-    private void loadData() {
-        ArrayList<Consignee> consignees = new ArrayList<>();
-        Random random = new Random();
-        Integer defaultNumber = random.nextInt(4);
-        for (int i = 0; i < 4; ++i) {
-            Consignee consignee = new Consignee();
-            consignee.setAddress("宇宙真理");
-            consignee.setName("金三胖");
-            consignee.setPhone("110");
-            consignee.setIsDefault(defaultNumber.equals(i));
-            consignees.add(consignee);
-        }
-        adapter = new EditAddressAdapter(act, consignees);
-        // listView.setAdapter(adapter);
     }
 
     class ViewHolder {

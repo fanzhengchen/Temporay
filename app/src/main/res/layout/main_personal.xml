@@ -134,8 +134,8 @@
             <com.hcb.jingle.widget.RCTextView
                 android:layout_width="6dp"
                 android:layout_height="6dp"
+                android:layout_gravity="center_vertical"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="20dp"
                 app:backgroundColor="@color/main_red"
                 app:cornerWidth="3dp" />
         </LinearLayout>
