@@ -6,8 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
-import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import com.hcb.jingle.GlobalConsts;
@@ -15,16 +13,9 @@ import com.hcb.jingle.R;
 import com.hcb.jingle.adapter.BalanceAdapter;
 import com.hcb.jingle.bean.BalanceVO;
 import com.hcb.jingle.frg.PtrListViewFrg;
-import com.hcb.jingle.frg.TitleFragment;
 import com.hcb.jingle.util.FormatUtil;
 
 import java.util.ArrayList;
-
-import butterknife.Bind;
-import butterknife.ButterKnife;
-import in.srain.cube.views.ptr.PtrDefaultHandler;
-import in.srain.cube.views.ptr.PtrFrameLayout;
-import in.srain.cube.views.ptr.PtrHandler;
 
 /**
  * Created by Administrator on 2016/1/20.

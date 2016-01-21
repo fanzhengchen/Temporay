@@ -66,6 +66,8 @@ public class EventCenter {
         EVT_USER_EDITED, //用户资料编辑
 
         EVT_MSG_UNREAD,//未读数变动
+        EVT_PAY_SUCCEED,//支付成功
+        EVT_PAY_FAILED,//支付失败
     }
 
     private final Handler uiHandler;

@@ -50,6 +50,8 @@
     <string name="version">版本</string>
     <string name="version_number">版本号</string>
     <string name="logout">退出登录</string>
+
+    <string name="choose_payway">选择支付方式</string>
     <string name="wchat_pay">微信支付</string>
     <string name="ali_pay">支付宝支付</string>
     <string name="share">分享</string>

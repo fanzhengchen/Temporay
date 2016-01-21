@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/dlg_whole"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/trans_half">
+
+    <LinearLayout
+        android:id="@+id/dlg_frame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:background="@drawable/shape_dlg_frame"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/choose_payway"
+                android:textColor="@color/txt_lvl_1"
+                android:textSize="18sp"/>
+
+            <ImageView
+                android:id="@+id/btn_cancel"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:padding="10dp"
+                android:src="@mipmap/dlg_close"/>
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/txt_lvl_4"/>
+
+        <RadioGroup
+            android:id="@+id/pay_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@color/bg_gray_color"
+            android:paddingLeft="20dp"
+            android:showDividers="beginning|middle|end">
+
+            <RadioButton
+                android:id="@+id/pay_balance"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:checked="true"
+                android:drawableLeft="@mipmap/ic_dingdang"
+                android:drawablePadding="10dp"
+                android:text="余额"
+                android:textColor="@drawable/txt_pay_way"
+                android:textSize="@dimen/txt_size_3"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/txt_lvl_5"/>
+
+            <RadioButton
+                android:id="@+id/pay_wx"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:drawableLeft="@mipmap/ic_alipay"
+                android:drawablePadding="10dp"
+                android:text="@string/ali_pay"
+                android:textColor="@drawable/txt_pay_way"
+                android:textSize="@dimen/txt_size_3"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/txt_lvl_5"/>
+
+            <RadioButton
+                android:id="@+id/pay_ali"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:drawableLeft="@mipmap/ic_wxpay"
+                android:drawablePadding="10dp"
+                android:text="@string/wchat_pay"
+                android:textColor="@drawable/txt_pay_way"
+                android:textSize="@dimen/txt_size_3"/>
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/txt_lvl_4"/>
+
+        <TextView
+            android:id="@+id/btn_confirm"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/shape_round_main_blue"
+            android:gravity="center"
+            android:text="确定支付"
+            android:textColor="@color/white"
+            android:textSize="@dimen/txt_size_2"/>
+    </LinearLayout>
+
+</RelativeLayout>

@@ -11,6 +11,7 @@ import com.hcb.jingle.frg.personal.GroupInfoFrg;
 import com.hcb.jingle.frg.personal.MyBalanceFrg;
 import com.hcb.jingle.frg.personal.MyInfoFrg;
 import com.hcb.jingle.frg.personal.SettingFrg;
+import com.hcb.jingle.frg.personal.MyInfoFrg;
 
 import butterknife.Bind;
 
@@ -58,4 +59,6 @@ public class PersonalFrg extends CachableFrg {
             });
         }
     }
+
+
 }
