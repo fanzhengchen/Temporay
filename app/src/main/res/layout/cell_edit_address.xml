@@ -6,17 +6,13 @@
     android:background="@color/white"
     android:orientation="horizontal">
 
-    <ImageView
-        android:layout_width="10dp"
-        android:layout_height="10dp"
+
+    <Space
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:layout_gravity="center_vertical"
-        android:layout_marginLeft="20dp"
-        android:orientation="horizontal"
-        android:scaleType="centerCrop"
-        android:src="@mipmap/selected_radio_button">
+        android:layout_marginLeft="10dp" />
 
-
-    </ImageView>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -69,5 +65,4 @@
         android:text="@string/edit"
         android:textColor="@color/main_blue"
         android:textSize="@dimen/txt_size_2" />
-
 </LinearLayout>

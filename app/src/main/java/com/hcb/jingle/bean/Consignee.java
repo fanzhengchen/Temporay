@@ -7,6 +7,15 @@ public class Consignee {
     private String name;
     private String address;
     private String phone;
+    private boolean isDefault;
+
+    public boolean isDefault() {
+        return isDefault;
+    }
+
+    public void setIsDefault(boolean isDefault) {
+        this.isDefault = isDefault;
+    }
 
     public String getName() {
         return name;

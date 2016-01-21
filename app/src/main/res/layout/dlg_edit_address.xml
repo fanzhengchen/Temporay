@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/trans_half"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/bg_round_corner"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:text="@string/name"
+                android:textColor="@color/txt_lvl_3"
+                android:textSize="@dimen/txt_size_3" />
+
+
+            <EditText
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:textColor="@color/txt_lvl_3"
+                android:textSize="@dimen/txt_size_3" />
+
+        </LinearLayout>
+
+        <include layout="@layout/under_line" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:text="@string/phone_number"
+                android:textColor="@color/txt_lvl_3"
+                android:textSize="@dimen/txt_size_3" />
+
+
+            <EditText
+                android:id="@+id/phoneNumber"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:textColor="@color/txt_lvl_3"
+                android:textSize="@dimen/txt_size_3" />
+
+        </LinearLayout>
+
+        <include layout="@layout/under_line" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/address"
+                android:textColor="@color/txt_lvl_3"
+                android:textSize="@dimen/txt_size_3" />
+
+
+            <EditText
+                android:id="@+id/address"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="10dp"
+                android:gravity="top|left"
+                android:background="@drawable/bg_edit_text"
+                android:lines="3"
+                android:padding="10dp"
+                android:textColor="@color/txt_lvl_3"
+                android:textSize="@dimen/txt_size_3" />
+
+        </LinearLayout>
+
+        <com.hcb.jingle.widget.RCTextView
+            android:id="@+id/dlg_edit_address_confirm"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            app:backgroundColor="@color/main_blue"
+            app:centerText="@string/confirm"
+            app:cornerWidth="3dp"
+            app:textColor="@color/white"
+            app:textSize="@dimen/txt_size_2" />
+
+    </LinearLayout>
+
+</RelativeLayout>
