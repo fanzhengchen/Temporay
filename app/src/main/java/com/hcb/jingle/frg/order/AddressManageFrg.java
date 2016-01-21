@@ -36,10 +36,14 @@ public class AddressManageFrg extends PtrListViewFrg {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         rootView = super.onCreateView(inflater, container, savedInstanceState);
+        super.setUpPtr();
         footer = View.inflate(getContext(), R.layout.cell_add_new_address, null);
         ptrFrameLayout.setLayoutParams(new LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT, 1.0f));
-//        loadData();
+        footer.setLayoutParams(new LinearLayout.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+        parent.addView(footer);
+        loadData();
         return rootView;
     }
 
@@ -54,8 +58,5 @@ public class AddressManageFrg extends PtrListViewFrg {
         }
         adapter = new EditAddressAdapter(act, consignees);
         listView.setAdapter(adapter);
-
     }
-
-
 }

@@ -130,6 +130,14 @@
                 android:text="@string/group_buying_message"
                 android:textColor="@color/txt_lvl_3"
                 android:textSize="@dimen/txt_size_3" />
+
+            <com.hcb.jingle.widget.RCTextView
+                android:layout_width="6dp"
+                android:layout_height="6dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                app:backgroundColor="@color/main_red"
+                app:cornerWidth="3dp" />
         </LinearLayout>
 
     </LinearLayout>

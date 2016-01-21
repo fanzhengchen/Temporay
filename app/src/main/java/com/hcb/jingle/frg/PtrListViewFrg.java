@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import com.hcb.jingle.R;
@@ -24,6 +25,8 @@ public class PtrListViewFrg extends TitleFragment {
     protected ListView listView;
     @Bind(R.id.ptrFrameLayout)
     protected PtrFrameLayout ptrFrameLayout;
+    @Bind(R.id.frg_list_view_parent)
+    protected LinearLayout parent;
 
     @Nullable
     @Override
