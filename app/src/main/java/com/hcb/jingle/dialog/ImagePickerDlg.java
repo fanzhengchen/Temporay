@@ -14,7 +14,7 @@ import butterknife.OnClick;
 /**
  * Created by Administrator on 2016/1/21.
  */
-public class ImgePickerDlg extends BaseDialog {
+public class ImagePickerDlg extends BaseDialog {
     public interface HandleImage {
         void onPick();
 
@@ -24,7 +24,7 @@ public class ImgePickerDlg extends BaseDialog {
     private Bitmap bitmap;
     private HandleImage handleImage;
 
-    public ImgePickerDlg setHandleImage(HandleImage handleImage) {
+    public ImagePickerDlg setHandleImage(HandleImage handleImage) {
         this.handleImage = handleImage;
         return this;
     }
