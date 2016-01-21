@@ -13,6 +13,7 @@
     <string name="edit">编辑</string>
     <string name="empty_fornow">暂无内容</string>
     <string name="load_err_retry">加载失败，点击重试</string>
+    <string name="net_error">网络错误</string>
     <string name="upload_success">上传成功</string>
     <string name="submit">提交</string>
     <string name="cancel">取消</string>
