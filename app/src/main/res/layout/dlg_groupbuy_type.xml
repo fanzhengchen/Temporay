@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<RelativeLayout
+    android:id="@+id/relative_dlg"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/trans_half"
     android:padding="50dp"
     >
     <RelativeLayout
+        android:id="@+id/relative_content"
         android:layout_width="match_parent"
         android:layout_height="240dp"
         android:layout_centerInParent="true"
@@ -13,6 +16,7 @@
         android:padding="@dimen/global_margin_left"
         >
         <ImageView
+            android:id="@+id/image_close"
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_alignParentRight="true"
@@ -42,9 +46,12 @@
                 android:background="@color/line_color"
                 />
             <RelativeLayout
+                android:id="@+id/relative_open"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/global_margin_left"
+                android:clickable="true"
+                android:focusable="true"
                 >
                 <RadioButton
                     android:id="@+id/radio_open"
@@ -52,6 +59,8 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentTop="true"
+                    android:duplicateParentState="true"
+                    android:clickable="false"
                     />
                 <TextView
                     android:id="@+id/text_open"
@@ -62,7 +71,7 @@
                     android:layout_alignBottom="@id/radio_open"
                     android:gravity="left|center_vertical"
                     android:text="@string/open_group"
-                    android:textAlignment="@dimen/txt_size_3"
+                    android:textSize="@dimen/txt_size_3"
                     android:textColor="@android:color/holo_red_dark"
                     />
                 <TextView
@@ -80,9 +89,12 @@
                 android:background="@color/line_color"
                 />
             <RelativeLayout
+                android:id="@+id/relative_join"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/global_margin_left"
+                android:clickable="true"
+                android:focusable="true"
                 >
                 <RadioButton
                     android:id="@+id/radio_join"
@@ -90,6 +102,8 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentTop="true"
+                    android:duplicateParentState="true"
+                    android:clickable="false"
                     />
                 <TextView
                     android:id="@+id/text_join"
@@ -100,7 +114,7 @@
                     android:layout_alignBottom="@id/radio_join"
                     android:gravity="left|center_vertical"
                     android:text="@string/join_group"
-                    android:textAlignment="@dimen/txt_size_3"
+                    android:textSize="@dimen/txt_size_3"
                     android:textColor="@android:color/holo_blue_dark"
                     />
                 <TextView
@@ -118,10 +132,11 @@
                 android:background="@color/line_color"
                 />
             <TextView
+                android:id="@id/text_confirm"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/light_blue"
-                android:padding="16dp"
+                android:padding="@dimen/global_margin_left"
                 android:text="@string/confirm"
                 android:textSize="@dimen/txt_size_2"
                 android:gravity="center"

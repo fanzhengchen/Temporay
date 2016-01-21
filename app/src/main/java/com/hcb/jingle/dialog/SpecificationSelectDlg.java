@@ -113,9 +113,13 @@ public class SpecificationSelectDlg extends BaseDialog{
         dismiss();
     }
 
-    @OnClick({R.id.relative_dlg,R.id.image_close})
-    void close(){
-        dismiss();
+    @OnClick({R.id.relative_dlg,R.id.image_close,R.id.linear_content})
+    void close(View v){
+        switch (v.getId()){
+            case R.id.relative_dlg:
+            case R.id.image_close:dismiss();break;
+            default:break;
+        }
     }
 
 

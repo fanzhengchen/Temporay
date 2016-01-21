@@ -12,6 +12,10 @@ import android.widget.TextView;
 
 import com.hcb.jingle.GlobalConsts;
 import com.hcb.jingle.R;
+import com.hcb.jingle.biz.ActivitySwitcher;
+import com.hcb.jingle.dialog.AddressSelectDlg;
+import com.hcb.jingle.dialog.GroupBuyTypeDlg;
+import com.hcb.jingle.dialog.PayTypeSelectDlg;
 import com.hcb.jingle.dialog.SpecificationSelectDlg;
 import com.hcb.jingle.util.ToastUtil;
 
@@ -66,4 +70,64 @@ public class CommodityFrg extends TitleFragment {
         act.hideNavi();
     }
 
+
+    @OnClick({R.id.text_buy,R.id.text_group_join})
+    void fillInformation(View v){
+        switch (v.getId()) {
+            case R.id.text_buy:
+                if(hasSpecification){
+                    showAddressSelect();
+                }else{
+                    showSpecification(false);
+                }
+
+                break;
+            case R.id.text_group_join:
+                showType();
+                break;
+        }
+    }
+
+    private void showType() {
+        new GroupBuyTypeDlg().setListener(new GroupBuyTypeDlg.GroupBuyTypeListener() {
+            @Override
+            public void selectType(String type) {
+                if(hasSpecification){
+                    showAddressSelect();
+                }else{
+                    showSpecification(false);
+                }
+            }
+        }).show(getFragmentManager(),"type");
+    }
+
+    private void showAddressSelect() {
+        new AddressSelectDlg().setListener(new AddressSelectDlg.AddressSelectListener() {
+            @Override
+            public void selectAddress(String name, String phone, String address) {
+                showPayType();
+            }
+        }).show(getFragmentManager(),"address");
+
+    }
+
+    private void showPayType() {
+        new PayTypeSelectDlg().setListener(new PayTypeSelectDlg.PayTypeListener() {
+            @Override
+            public void selectPayType(String type) {
+                ActivitySwitcher.startFragment(act,PaySuccessFrg.class);
+            }
+        }).show(getFragmentManager(),"pay");
+    }
+
+    private void showSpecification(final Boolean back) {
+        new SpecificationSelectDlg().setListener(new SpecificationSelectDlg.SpecificationListener() {
+            @Override
+            public void getSpecification(String specification, String number) {
+                if(!back){
+                    showAddressSelect();
+                }
+            }
+        }).show(getFragmentManager(), "specification");
+    }
 }
