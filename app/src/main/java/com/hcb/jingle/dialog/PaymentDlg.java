@@ -83,6 +83,7 @@ public class PaymentDlg extends BaseDialog implements EventListener {
         switch (e.type) {
             case EVT_PAY_SUCCEED:
                 ToastUtil.show("支付成功");
+
                 break;
             case EVT_PAY_FAILED:
                 ToastUtil.show("支付失败");

@@ -68,6 +68,7 @@
                 android:padding="@dimen/global_margin_left"
                 android:text="这里可以放上对商品的一些文字描述，夸赞等等，一般来说用灰色文字，减少视觉中心漂移，两行三行就够了"
                 android:textSize="@dimen/txt_size_4"
+                android:textColor="@color/annotation"
                 />
             
             <ImageView
@@ -95,6 +96,7 @@
                     android:layout_alignParentLeft="true"
                     android:text="快递:免运费"
                     android:textSize="@dimen/txt_size_4"
+                    android:textColor="@color/annotation"
                     />
                 <TextView
                     android:id="@+id/text_sales"
@@ -105,6 +107,7 @@
                     android:gravity="center_horizontal"
                     android:text="销量:1234笔"
                     android:textSize="@dimen/txt_size_4"
+                    android:textColor="@color/annotation"
                     />
                 <TextView
                     android:id="@+id/text_time"
@@ -113,6 +116,7 @@
                     android:layout_alignParentRight="true"
                     android:text="剩余1天2小时34分钟"
                     android:textSize="@dimen/txt_size_4"
+                    android:textColor="@color/annotation"
                     />
             </RelativeLayout>
             <View
@@ -172,7 +176,13 @@
                 android:src="@mipmap/stub_avatar"
                 android:scaleType="centerCrop"
                 />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+
+            </LinearLayout>
         </LinearLayout>
+
     </ScrollView>
 
     <RelativeLayout
@@ -239,7 +249,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@color/dark_green"
+            android:background="@color/capricious_buy"
             android:text="¥19.80 任性购买"
             android:gravity="center"
             android:textSize="@dimen/txt_size_3"
@@ -250,7 +260,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@color/light_blue"
+            android:background="@color/main_blue"
             android:text="¥9.80 参团"
             android:gravity="center"
             android:textSize="@dimen/txt_size_3"

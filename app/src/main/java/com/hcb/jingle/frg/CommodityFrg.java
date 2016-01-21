@@ -70,6 +70,10 @@ public class CommodityFrg extends TitleFragment {
         act.hideNavi();
     }
 
+    @OnClick(R.id.image_back)
+    void back(){
+        act.onBackPressed();
+    }
 
     @OnClick({R.id.text_buy,R.id.text_group_join})
     void fillInformation(View v){

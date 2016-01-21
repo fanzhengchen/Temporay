@@ -114,4 +114,14 @@
     <string name="pay_balance">余额</string>
     <string name="pay_confirm">确认支付</string>
 
+    <string name="pay_success">支付成功</string>
+    <string name="has_pay">买家已付款</string>
+    <string name="receiver">收货人:</string>
+    <string name="receive_address">收货地址:</string>
+    <string name="receive_money">实收款</string>
+    <string name="back_home">返回首页</string>
+    <string name="check_order">查看订单</string>
+    <string name="invite_friends">邀请好友参团</string>
+    <string name="invite_detail1">再有两名好友付款参团,即成功升级</string>
+    <string name="invite_detail2">成团即返现5%</string>
 </resources>

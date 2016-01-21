@@ -165,7 +165,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
-                android:background="@color/light_blue"
+                android:background="@color/main_blue"
                 android:padding="@dimen/global_margin_left"
                 android:text="@string/pay_confirm"
                 android:textSize="@dimen/txt_size_2"
