@@ -4,7 +4,7 @@ import com.alibaba.fastjson.annotation.JSONField;
 import com.hcb.jingle.bean.WxOrderVO;
 import com.hcb.jingle.model.base.InBody;
 
-public class WxOrderInBody extends InBody {
+public class PayOrderInBody extends InBody {
     private WxOrderVO wxOrder;
     private String myOrderNo;
 
