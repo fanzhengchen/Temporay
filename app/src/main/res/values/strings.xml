@@ -104,4 +104,10 @@
     <string name="order_detail">订单详情</string>
     <string name="return_goods_illustration">退货说明</string>
 
+    <string name="group_buy_type">团购方式</string>
+    <string name="open_group">开团</string>
+    <string name="open_group_discount">邀请2位小伙伴参团,团长可得返利</string>
+    <string name="join_group">参团</string>
+    <string name="join_group_explain">随机计入叮当团,快速成团</string>
+
 </resources>

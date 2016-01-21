@@ -142,6 +142,7 @@ public class HomePageFrg extends CachableFrg implements MoreLoader {
 
     private void initList() {
         listData = new ArrayList<>();
+        listData = getData();
         cmtyAdapter = new CommodityAdapter(getActivity(), listData);
         cmtyAdapter.setMoreLoader(this);
         listView.setAdapter(cmtyAdapter);
@@ -163,6 +164,19 @@ public class HomePageFrg extends CachableFrg implements MoreLoader {
 
             }
         });
+    }
+
+    private ArrayList<CommodityVO> getData(){
+        int count = 5;
+        ArrayList<CommodityVO> data = new ArrayList<CommodityVO>();
+        for(int i = 0;i<count;i++){
+            CommodityVO vo = new CommodityVO();
+            vo.setId(i+"");
+            vo.setDesc("商品"+i);
+            vo.setTitle("超级大甩卖"+i);
+            data.add(vo);
+        }
+        return data;
     }
 
     private void initPtr() {
