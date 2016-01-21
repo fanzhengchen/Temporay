@@ -3,7 +3,7 @@ package com.hcb.jingle.model.pay;
 import com.alibaba.fastjson.annotation.JSONField;
 import com.hcb.jingle.model.base.OutBody;
 
-public class WxOrderOutBody extends OutBody {
+public class PayOrderOutBody extends OutBody {
 
     private int money;  // total_fee
 
@@ -13,7 +13,7 @@ public class WxOrderOutBody extends OutBody {
     }
 
     @JSONField(name = "total_fee")
-    public WxOrderOutBody setMoney(int money) {
+    public PayOrderOutBody setMoney(int money) {
         this.money = money;
         return this;
     }

@@ -12,15 +12,11 @@ android {
         versionName "1.0.0"
 
         manifestPlaceholders = [
-                GETUI_APP_ID    : "waitToBeAdded",
-                GETUI_APP_KEY   : "waitToBeAdded",
-                GETUI_APP_SECRET: "waitToBeAdded",
+                GETUI_APP_ID    : "80k54oFOuC9VD33rnkBGi1",
+                GETUI_APP_KEY   : "cKTsgmJHfO7dmHo3eEV0GA",
+                GETUI_APP_SECRET: "nREo4bKkrPASLqIEN83IK8",
                 PACKAGE_NAME    : applicationId
         ]
-    }
-
-    sourceSets.main {
-        jniLibs.srcDirs = ['libs']
     }
 
     packagingOptions {
@@ -55,7 +51,7 @@ android {
     sourceSets {
         main {
             jni.srcDirs = []
-            jniLibs.srcDirs = ['../umshare/libs']
+            jniLibs.srcDirs = ['../umshare/jniLibs']
         }
     }
 }

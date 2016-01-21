@@ -23,7 +23,7 @@ public class EventCenter {
         public void onEvent(HcbEvent e);
     }
 
-    private void sendEvtWithKey(final EventType evt,
+    public void sendEvtWithKey(final EventType evt,
                                 final String key, final String value) {
         final Map<String, Object> param = new HashMap<String, Object>(1);
         param.put(key, value);
