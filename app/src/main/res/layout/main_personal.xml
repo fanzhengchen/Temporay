@@ -1,8 +1,177 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/frg_personal_linearLayout"
-    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    ></LinearLayout>
+    android:layout_height="match_parent"
+    android:background="@color/bg_gray_color"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingLeft="10dp">
+
+        <LinearLayout
+            android:id="@+id/main_personal_info"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="2dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="10dp"
+                android:text="@string/my_information"
+                android:textColor="@color/txt_lvl_3"
+                android:textSize="@dimen/txt_size_3" />
+
+
+            <TextView
+                android:id="@+id/main_personal_nickname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:text="@string/nickname"
+                android:textColor="@color/txt_lvl_3"
+                android:textSize="@dimen/txt_size_3" />
+
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/main_personal_portrait"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="10dp"
+                android:src="@mipmap/stub_avatar"
+                app:riv_corner_radius="3dp" />
+        </LinearLayout>
+
+        <include layout="@layout/under_line" />
+
+        <LinearLayout
+            android:id="@+id/main_personal_balance"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/balance_of_account"
+                android:textColor="@color/txt_lvl_3"
+                android:textSize="@dimen/txt_size_3" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="10dp"
+                android:gravity="right"
+                android:text="¥100"
+                android:textColor="@color/txt_lvl_3"
+                android:textSize="@dimen/txt_size_3" />
+        </LinearLayout>
+
+        <include layout="@layout/under_line" />
+
+        <LinearLayout
+            android:id="@+id/address_manage"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/address_manage"
+                android:textColor="@color/txt_lvl_3"
+                android:textSize="@dimen/txt_size_3" />
+        </LinearLayout>
+
+        <include layout="@layout/under_line" />
+
+        <LinearLayout
+            android:id="@+id/main_personal_order"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/my_orders"
+                android:textColor="@color/txt_lvl_3"
+                android:textSize="@dimen/txt_size_3" />
+        </LinearLayout>
+
+        <include layout="@layout/under_line" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/group_buying_message"
+                android:textColor="@color/txt_lvl_3"
+                android:textSize="@dimen/txt_size_3" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingLeft="10dp">
+
+        <LinearLayout
+            android:id="@+id/frg_personal_share"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/share_app"
+                android:textColor="@color/txt_lvl_3"
+                android:textSize="@dimen/txt_size_3" />
+        </LinearLayout>
+
+        <include layout="@layout/under_line" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/setting"
+                android:textColor="@color/txt_lvl_3"
+                android:textSize="@dimen/txt_size_3" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+</LinearLayout>

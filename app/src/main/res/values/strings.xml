@@ -3,21 +3,26 @@
 
     <string name="homepage">团购</string>
     <string name="mall">商城</string>
+    <string name="male">男</string>
+    <string name="female">女</string>
     <string name="admin">管家</string>
     <string name="zone">社区</string>
     <string name="personal">个人</string>
 
     <string name="press_again_to_leave">再按一次退出</string>
     <string name="loading">正在加载...</string>
+    <string name="edit">编辑</string>
     <string name="empty_fornow">暂无内容</string>
     <string name="load_err_retry">加载失败，点击重试</string>
     <string name="upload_success">上传成功</string>
+    <string name="submit">提交</string>
     <string name="cancel">取消</string>
     <string name="save">保存</string>
     <string name="confirm">确定</string>
     <string name="delete">删除</string>
 
     <string name="login">登录</string>
+    <string name="goods_name">商品名称</string>
     <string name="login_with_qq">QQ号登录</string>
     <string name="qq_not_installed">请先安装QQ客户端</string>
     <string name="qq_auth_failed">QQ授权失败</string>
@@ -34,6 +39,10 @@
     <string name="have_read_and_agreed_with">已阅读并同意</string>
 
     <string name="nickname">昵称</string>
+    <string name="gender">性别</string>
+    <string name="city">城市</string>
+    <string name="birth_date">出生日期</string>
+    <string name="username_nickname">用户名/昵称</string>
     <string name="pick_avatar">选择头像</string>
     <string name="imageGallery">相册</string>
     <string name="takePhoto">拍照</string>
@@ -49,6 +58,47 @@
     <string name="share_title">万事叮当--让你遇见更好的自己</string>
     <string name="share_content">万事叮当是一款快速团购APP</string>
 
+    <string name="add_image">添加图片</string>
+    <string name="add_new_address">添加新地址</string>
+    <string name="portrait">头像</string>
+    <string name="my_information">我的资料</string>
+    <string name="balance_of_account">账户余额</string>
+    <string name="my_balance">我的余额</string>
+    <string name="my_orders">我的订单</string>
+    <string name="address_manage">收货地址管理</string>
+    <string name="group_buying_message">拼团消息</string>
+    <string name="afford_original_price">原价购买</string>
+    <string name="share_app">分享叮当口袋</string>
+    <string name="setting">设置</string>
+    <string name="order_status">订单状态</string>
+    <string name="RMB">¥</string>
+    <string name="pending">待处理</string>
+
+    <string name="merchant_name">商家名称</string>
+    <string name="return_goods">退货</string>
+    <string name="specification_type">规格类型</string>
+    <string name="freight">运费</string>
+    <string name="total">合计</string>
+    <string name="cancel_group">取消参团</string>
+    <string name="accept_group">接受参团</string>
+    <string name="earn_money_machine">赚钱机器</string>
+    <string name="leader_prize">团长奖励</string>
+    <string name="priority_illustration">特权说明</string>
+    <string name="input_reason_returning_goods">请输入退货理由</string>
+    <string name="consignee">收货人</string>
+    <string name="order_number">订单编号</string>
+    <string name="tracking_number">运单号</string>
+    <string name="express_info">物流信息</string>
+
+    <string name="look_up_order">查看订单</string>
+    <string name="decline_group">不接受参团</string>
+    <string name="leave_message_and_ask">留言询问</string>
+
+    <string name="delivery_address">收货地址</string>
+    <string name="address_manager">收货地址管理</string>
+    <string name="order_detail">订单详情</string>
+    <string name="return_goods_illustration">退货说明</string>
+
     <string name="group_buy_type">团购方式</string>
     <string name="open_group">开团</string>
     <string name="open_group_discount">邀请2位小伙伴参团,团长可得返利</string>
@@ -62,4 +112,5 @@
     <string name="pay_type_select">选择支付方式</string>
     <string name="pay_balance">余额</string>
     <string name="pay_confirm">确认支付</string>
+
 </resources>

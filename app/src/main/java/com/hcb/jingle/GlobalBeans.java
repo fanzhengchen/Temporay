@@ -2,6 +2,7 @@ package com.hcb.jingle;
 
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.os.Handler;
 
 import com.hcb.jingle.bean.AppInfo;
@@ -11,6 +12,7 @@ import com.hcb.jingle.biz.EventCenter;
 import com.hcb.jingle.cache.CacheCenter;
 import com.hcb.jingle.cache.SignalCache;
 import com.hcb.jingle.http.HttpProvider;
+import com.hcb.jingle.util.ColorUtil;
 import com.hcb.jingle.util.DeviceHelper;
 import com.nostra13.universalimageloader.cache.disc.impl.ext.LruDiskCache;
 import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
@@ -37,7 +39,6 @@ public class GlobalBeans {
     public static void initForMainUI(final Context ctx) {
         self = new GlobalBeans(ctx);
         self.uiHandler = new Handler(ctx.getMainLooper());
-
         self.initBizObjects();
         self.initImageLoader();
 
@@ -78,6 +79,7 @@ public class GlobalBeans {
         PlatformConfig.setQQZone(GlobalConsts.QQ_ID, GlobalConsts.QQ_SECRET);
         PlatformConfig.setWeixin(GlobalConsts.WX_ID, GlobalConsts.WX_SECRET);
         PlatformConfig.setSinaWeibo(GlobalConsts.WB_ID, GlobalConsts.WB_SECRET);
+        ColorUtil.setContext(ctx);
     }
 
     private void initImageLoader() {
