@@ -101,14 +101,14 @@ public class MyInfoFrg extends TitleFragment implements NaviRightDecorator {
         btnImage.setTextColor(ColorUtil.getColor(R.color.main_pink));
     }
 
-    @OnClick(R.id.frg_my_info_portrait_layout)
+    @OnClick(R.id.frg_my_info_portrait)
     public void imagePicker() {
 
         ImagePickerDialog imagePickerDialog = new ImagePickerDialog();
         imagePickerDialog.setHandleImage(new ImagePickerDialog.HandleImage() {
             @Override
             public void onPick() {
-                ToastUtil.show("onPick");
+//                ToastUtil.show("onPick");
                 Intent intent = new Intent();
                 intent.setType("image/*");
                 intent.setAction(Intent.ACTION_GET_CONTENT);
@@ -118,7 +118,7 @@ public class MyInfoFrg extends TitleFragment implements NaviRightDecorator {
 
             @Override
             public void onCamera() {
-                ToastUtil.show("onCamera");
+//                ToastUtil.show("onCamera");
                 photoFile = CacheCenter.genCameraFile(act, genTempCameraFile());
                 if (null == photoFile) {
                     ToastUtil.show("不能拍照：存储卡空间不足！");
@@ -131,7 +131,7 @@ public class MyInfoFrg extends TitleFragment implements NaviRightDecorator {
 
             }
         });
-        imagePickerDialog.show(getFragmentManager(), "imagePickerDialog");
+//        imagePickerDialog.show(getFragmentManager(), "imagePickerDialog");
     }
 
     @Override
