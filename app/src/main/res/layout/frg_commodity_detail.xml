@@ -60,6 +60,7 @@
                 android:text="文艺森女小清新短裤"
                 android:layout_marginLeft="@dimen/global_margin_left"
                 android:layout_marginTop="@dimen/global_margin_left"
+                android:textColor="@color/main_text"
                 />
             <TextView
                 android:id="@+id/text_description"
@@ -135,8 +136,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:text="商品 规格"
-                    android:textColor="@color/black"
+                    android:text="选择 商品规格"
+                    android:textColor="@color/main_text"
                     />
                 <TextView
                     android:id="@+id/text_specification"
@@ -149,8 +150,8 @@
                     android:textSize="@dimen/txt_size_3"
                     />
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
                     android:layout_alignParentRight="true"
                     android:src="@mipmap/list_goto_btn"
                     />
@@ -193,11 +194,12 @@
         >
         <ImageView
             android:id="@+id/image_back"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
-            android:src="@mipmap/arrow_left"
+            android:src="@mipmap/commodity_arrow_left"
+            android:scaleType="center"
             />
         <ImageView
             android:id="@+id/image_share"
@@ -206,6 +208,7 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:src="@mipmap/fenxiang"
+            android:scaleType="center"
             />
     </RelativeLayout>
 

@@ -10,7 +10,7 @@
     <RelativeLayout
         android:id="@+id/relative_content"
         android:layout_width="match_parent"
-        android:layout_height="240dp"
+        android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:padding="@dimen/global_margin_left"
         android:background="@drawable/shape_dlg_frame"
@@ -26,7 +26,7 @@
             />
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
             >
             <TextView
@@ -34,6 +34,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="@dimen/global_margin_left"
+                android:padding="@dimen/global_margin_left"
                 android:text="@string/group_buy_type"
                 android:textSize="@dimen/txt_size_2"
                 android:textColor="@color/black"
@@ -71,7 +72,7 @@
                     android:gravity="left|center_vertical"
                     android:text="@string/open_group"
                     android:textSize="@dimen/txt_size_3"
-                    android:textColor="@android:color/holo_red_dark"
+                    android:textColor="@color/main_pink"
                     />
                 <TextView
                     android:layout_width="wrap_content"
@@ -134,8 +135,9 @@
                 android:id="@id/text_confirm"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/light_blue"
+                android:background="@drawable/shape_confirm_btn"
                 android:padding="@dimen/global_margin_left"
+                android:layout_marginTop="16dp"
                 android:text="@string/confirm"
                 android:textSize="@dimen/txt_size_2"
                 android:gravity="center"
