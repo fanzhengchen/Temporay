@@ -5,7 +5,6 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -20,6 +19,7 @@ import java.util.ArrayList;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * Created by Administrator on 2016/1/20.
@@ -32,6 +32,7 @@ public class AddressManageFrg extends TitleFragment {
     RadioGroup radioGroup;
     @Bind(R.id.frg_address_manage_right)
     LinearLayout right;
+
     private int cellHeight = FormatUtil.pixOfDip(80);
     private int dividerHeight = FormatUtil.pixOfDip(1);
     private View footer;
@@ -54,38 +55,66 @@ public class AddressManageFrg extends TitleFragment {
         cells = new ArrayList<>();
         consignees = new ArrayList<>();
         for (int i = 0; i < 10; ++i) {
-            radioGroup.addView(createCell(R.layout.cell_radio_button, cellHeight));
-            radioGroup.addView(createCell(R.layout.under_line, dividerHeight));
-            final View view = createCell(R.layout.cell_edit_address, cellHeight);
-            final ViewHolder holder = new ViewHolder();
-            ButterKnife.bind(holder, view);
-            cells.add(view);
-            right.addView(view);
-            view.setTag(holder);
-            right.addView(createCell(R.layout.under_line, dividerHeight));
-            consignees.add(new Consignee());
-            final int index = i;
-            view.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    EditAddressDlg dlg = new EditAddressDlg();
-                    dlg.setListener(new EditAddressDlg.EditListener() {
-                        @Override
-                        public void onConfirm(EditText name, EditText phone, EditText address) {
-                            Consignee consignee = consignees.get(index);
-                            consignee.setPhone(phone.getText().toString());
-                            consignee.setName(name.getText().toString());
-                            consignee.setAddress(address.getText().toString());
-                            holder.name.setText(name.getText().toString());
-                            holder.address.setText(address.getText().toString());
-                            holder.phone.setText(phone.getText().toString());
-                        }
-                    });
-                    dlg.show(getFragmentManager(), "EditAddress");
-                }
-            });
+            View newAddress = createNewAddress();
+            addListener(i, newAddress);
+            addCell(i, newAddress);
         }
         return rootView;
+    }
+
+    private View createNewAddress() {
+        View view = createCell(R.layout.cell_edit_address, cellHeight);
+        final ViewHolder holder = new ViewHolder();
+        ButterKnife.bind(holder, view);
+        cells.add(view);
+        view.setTag(holder);
+        return view;
+    }
+
+    private void addCell(final int i, View addressView) {
+        radioGroup.addView(createCell(R.layout.cell_radio_button, cellHeight));
+        radioGroup.addView(createCell(R.layout.under_line, dividerHeight));
+        right.addView(addressView);
+        right.addView(createCell(R.layout.under_line, dividerHeight));
+    }
+
+    private void addListener(final int i, final View addressView) {
+        View edit = (TextView) addressView.findViewById(R.id.edit_address);
+        final ViewHolder holder = (ViewHolder) addressView.getTag();
+        edit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showDlg(i, addressView, false);
+            }
+        });
+    }
+
+    private void showDlg(final int i, final View view, final boolean isNew) {
+        EditAddressDlg dlg = new EditAddressDlg();
+        final ViewHolder holder = (ViewHolder) view.getTag();
+        if (!isNew) {
+            dlg.setData(
+                    holder.name.getText().toString(),
+                    holder.phone.getText().toString(),
+                    holder.address.getText().toString());
+        }
+        dlg.setListener(new EditAddressDlg.EditListener() {
+            @Override
+            public void onConfirm(String name, String phone, String address) {
+                Consignee consignee = new Consignee();
+                consignee.setPhone(phone);
+                consignee.setName(name);
+                consignee.setAddress(address);
+                consignees.add(consignee);
+                holder.name.setText(name);
+                holder.address.setText(address);
+                holder.phone.setText(phone);
+                if (isNew) {
+                    addCell(i, view);
+                }
+            }
+        });
+        dlg.show(getFragmentManager(), "EditAddress");
     }
 
 
@@ -102,5 +131,14 @@ public class AddressManageFrg extends TitleFragment {
         TextView phone;
         @Bind(R.id.cell_edit_address_address)
         TextView address;
+    }
+
+    @OnClick(R.id.add_new_address)
+    public void addAddress() {
+        final int i = consignees.size();
+        View addressView = createNewAddress();
+        addListener(i, addressView);
+        showDlg(i, addressView, true);
+
     }
 }

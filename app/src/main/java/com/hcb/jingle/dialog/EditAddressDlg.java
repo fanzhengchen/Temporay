@@ -30,8 +30,16 @@ public class EditAddressDlg extends BaseDialog {
     @Bind(R.id.address)
     EditText address;
 
+    private String _name, _phone, _address;
+
+    public void setData(String _name, String _phone, String _address) {
+        this._address = _address;
+        this._name = _name;
+        this._phone = _phone;
+    }
+
     public interface EditListener {
-        public void onConfirm(EditText name, EditText phone, EditText address);
+        public void onConfirm(String name, String phone, String address);
     }
 
     private View rootView;
@@ -46,6 +54,9 @@ public class EditAddressDlg extends BaseDialog {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.dlg_edit_address, container, false);
         ButterKnife.bind(this, rootView);
+        name.setText(_name);
+        phone.setText(_phone);
+        address.setText(_address);
         return rootView;
     }
 
@@ -68,7 +79,10 @@ public class EditAddressDlg extends BaseDialog {
                 return;
             }
 
-            listener.onConfirm(name, phone, address);
+            listener.onConfirm(
+                    name.getText().toString(),
+                    phone.getText().toString(),
+                    address.getText().toString());
         }
         dismiss();
     }
