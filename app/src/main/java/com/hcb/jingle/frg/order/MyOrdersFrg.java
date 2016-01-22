@@ -5,21 +5,13 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
 
 import com.hcb.jingle.R;
 import com.hcb.jingle.adapter.MyOrdersAdapter;
 import com.hcb.jingle.bean.MyOrder;
 import com.hcb.jingle.frg.PtrListViewFrg;
-import com.hcb.jingle.frg.TitleFragment;
 
 import java.util.ArrayList;
-
-import butterknife.Bind;
-import butterknife.ButterKnife;
-import in.srain.cube.views.ptr.PtrDefaultHandler;
-import in.srain.cube.views.ptr.PtrFrameLayout;
-import in.srain.cube.views.ptr.PtrHandler;
 
 /**
  * Created by Administrator on 2016/1/19.
@@ -40,7 +32,13 @@ public class MyOrdersFrg extends PtrListViewFrg {
         rootView = super.onCreateView(inflater, container, savedInstanceState);
         super.setUpPtr();
         loadData();
+        listView.setDividerHeight(0);
         return rootView;
+    }
+
+    @Override
+    protected int topSpaceHeight() {
+        return 2;
     }
 
     private void loadData() {

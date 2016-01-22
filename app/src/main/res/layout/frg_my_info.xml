@@ -64,7 +64,7 @@
                 android:layout_weight="1"
                 android:background="@color/white"
                 android:gravity="right|center_vertical"
-                android:text="sadf"
+                android:text=""
                 android:textColor="@color/txt_lvl_3"
                 android:textSize="@dimen/txt_size_3" />
 
@@ -155,7 +155,7 @@
                 android:layout_weight="1"
                 android:background="@color/white"
                 android:gravity="right|center_vertical"
-                android:text="sadf"
+                android:text=""
                 android:textColor="@color/txt_lvl_3"
                 android:textSize="@dimen/txt_size_3" />
 

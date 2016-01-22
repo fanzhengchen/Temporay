@@ -62,7 +62,7 @@ public class MyInfoFrg extends TitleFragment implements NaviRightDecorator {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.frg_my_info, container, false);
         ButterKnife.bind(this, rootView);
-        imagePicker();
+        //imagePicker();
         return rootView;
     }
 
@@ -131,7 +131,7 @@ public class MyInfoFrg extends TitleFragment implements NaviRightDecorator {
 
             }
         });
-//        imagePickerDialog.show(getFragmentManager(), "imagePickerDialog");
+        imagePickerDialog.show(getFragmentManager(), "imagePickerDialog");
     }
 
     @Override

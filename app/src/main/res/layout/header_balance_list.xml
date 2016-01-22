@@ -13,6 +13,6 @@
         android:gravity="center"
         android:text="@string/accept_group"
         android:textColor="@color/main_red"
-        android:textSize="@dimen/txt_size_0" />
+        android:textSize="@dimen/title_size" />
 
 </LinearLayout>
