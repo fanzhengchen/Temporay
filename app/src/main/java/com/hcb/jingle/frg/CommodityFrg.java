@@ -75,6 +75,11 @@ public class CommodityFrg extends TitleFragment {
         act.onBackPressed();
     }
 
+    @OnClick(R.id.relative_specification)
+    void selectSpecification(){
+        showSpecification(true);
+    }
+
     @OnClick({R.id.text_buy,R.id.text_group_join})
     void fillInformation(View v){
         switch (v.getId()) {
