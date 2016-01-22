@@ -36,6 +36,7 @@ public class AddressManageFrg extends TitleFragment {
     private int cellHeight = FormatUtil.pixOfDip(80);
     private int dividerHeight = FormatUtil.pixOfDip(1);
     private View footer;
+    private int defaultIndex = 0;
     private ArrayList<View> cells;
     private ArrayList<Consignee> consignees;
 
@@ -140,5 +141,12 @@ public class AddressManageFrg extends TitleFragment {
         addListener(i, addressView);
         showDlg(i, addressView, true);
 
+    }
+
+    public Consignee getDefaultConsignee() {
+        if (consignees == null || consignees.size() == 0) {
+            return null;
+        }
+        return consignees.get(defaultIndex);
     }
 }
